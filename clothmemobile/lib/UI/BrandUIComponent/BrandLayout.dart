@@ -20,28 +20,28 @@ class _brandState extends State<brand> {
         child: Text(
           "Category Brand",
           style: TextStyle(
-              fontFamily: "Gotik",
+              fontFamily: "Roboto",
               fontSize: 20.0,
               color: Colors.black54,
               fontWeight: FontWeight.w700),
         ),
       ),
-      actions: <Widget>[
-        InkWell(
-          onTap: () {
-            Navigator.of(context).push(PageRouteBuilder(
-                pageBuilder: (_, __, ___) => new searchAppbar()));
-          },
-          child: Padding(
-            padding: const EdgeInsets.only(right: 20.0),
-            child: Icon(
-              Icons.search,
-              size: 27.0,
-              color: Colors.black54,
-            ),
-          ),
-        )
-      ],
+//      actions: <Widget>[
+////        InkWell(
+////          onTap: () {
+////            Navigator.of(context).push(PageRouteBuilder(
+////                pageBuilder: (_, __, ___) => new searchAppbar()));
+////          },
+////          child: Padding(
+////            padding: const EdgeInsets.only(right: 20.0),
+////            child: Icon(
+////              Icons.search,
+////              size: 27.0,
+////              color: Colors.black54,
+////            ),
+////          ),
+////        )
+//      ],
     );
 
     return Padding(

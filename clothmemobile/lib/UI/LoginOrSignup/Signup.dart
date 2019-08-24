@@ -151,7 +151,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                                       Navigator.of(context).pushReplacement(
                                           MaterialPageRoute(
                                               builder: (BuildContext context) =>
-                                                  new loginScreen()));
+                                                  new LoginScreen()));
                                     },
                                     child: Text(
                                       "Have Acount? Sign In",

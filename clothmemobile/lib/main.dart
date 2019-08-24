@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
+import 'package:treva_shop_flutter/UI/CartUIComponent/CartLayout.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/ChoseLoginOrSignup.dart';
 import 'package:treva_shop_flutter/UI/HomeUIComponent/Home.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Login.dart';
@@ -41,7 +42,7 @@ class myApp extends StatelessWidget {
       /// Move splash screen to ChoseLogin Layout
       /// Routes
       routes: <String, WidgetBuilder>{
-        "login": (BuildContext context) => new onBoarding()
+        "login": (BuildContext context) => OnBoarding(),
       },
     );
   }

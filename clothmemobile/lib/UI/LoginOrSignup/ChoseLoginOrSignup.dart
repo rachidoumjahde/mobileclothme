@@ -345,7 +345,7 @@ class _AnimationSplashLoginState extends State<AnimationSplashLogin> {
     widget.animationController.addListener(() {
       if (widget.animation.isCompleted) {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => new loginScreen()));
+            builder: (BuildContext context) => new LoginScreen()));
       }
     });
     return AnimatedBuilder(

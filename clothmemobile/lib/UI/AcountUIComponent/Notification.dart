@@ -44,9 +44,9 @@ class _notificationState extends State<notification> {
             "Notification",
             style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 18.0,
+                fontSize: 20.0,
                 color: Colors.black54,
-                fontFamily: "Gotik"),
+                fontFamily: "Roboto"),
           ),
           iconTheme: IconThemeData(
             color: const Color(0xFF6991C7),
