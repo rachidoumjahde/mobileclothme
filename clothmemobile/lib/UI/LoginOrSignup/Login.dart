@@ -5,12 +5,12 @@ import 'package:treva_shop_flutter/UI/LoginOrSignup/LoginAnimation.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Signup.dart';
 
 
-class loginScreen extends StatefulWidget {
+class LoginScreen extends StatefulWidget {
   @override
-  _loginScreenState createState() => _loginScreenState();
+  _LoginScreenState createState() => _LoginScreenState();
 }
 /// Component Widget this layout UI
-class _loginScreenState extends State<loginScreen>
+class _LoginScreenState extends State<LoginScreen>
     with TickerProviderStateMixin {
   //Animation Declaration
   AnimationController sanimationController;
@@ -130,12 +130,12 @@ class _loginScreenState extends State<loginScreen>
                                 /// ButtonCustomFacebook
                                 Padding(
                                     padding: EdgeInsets.symmetric(vertical: 30.0)),
-                                buttonCustomFacebook(),
+                                ButtonCustomFacebook(),
 
                                 /// ButtonCustomGoogle
                                 Padding(
                                     padding: EdgeInsets.symmetric(vertical: 7.0)),
-                                buttonCustomGoogle(),
+                                ButtonCustomGoogle(),
                               ],
                             ),
 
@@ -229,13 +229,13 @@ class _loginScreenState extends State<loginScreen>
 }
 
 /// textfromfield custom class
-class textFromField extends StatelessWidget {
+class TextFromField extends StatelessWidget {
   bool password;
   String email;
   IconData icon;
   TextInputType inputType;
 
-  textFromField({this.email, this.icon, this.inputType, this.password});
+  TextFromField({this.email, this.icon, this.inputType, this.password});
 
   @override
   Widget build(BuildContext context) {
@@ -278,7 +278,7 @@ class textFromField extends StatelessWidget {
 }
 
 ///buttonCustomFacebook class
-class buttonCustomFacebook extends StatelessWidget {
+class ButtonCustomFacebook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -316,7 +316,7 @@ class buttonCustomFacebook extends StatelessWidget {
 }
 
 ///buttonCustomGoogle class
-class buttonCustomGoogle extends StatelessWidget {
+class ButtonCustomGoogle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -354,7 +354,7 @@ class buttonCustomGoogle extends StatelessWidget {
 }
 
 ///ButtonBlack class
-class buttonBlackBottom extends StatelessWidget {
+class ButtonBlackBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(

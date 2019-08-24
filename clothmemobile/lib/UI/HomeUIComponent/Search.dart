@@ -8,19 +8,19 @@ class searchAppbar extends StatefulWidget {
 class _searchAppbarState extends State<searchAppbar> {
   @override
 
-  /// Sentence Text header "Hello i am Treva.........."
-  var _textHello = Padding(
-    padding: const EdgeInsets.only(right: 50.0, left: 20.0),
-    child: Text(
-      "Hello, i am Treva. What would you like to search ?",
-      style: TextStyle(
-          letterSpacing: 0.1,
-          fontWeight: FontWeight.w600,
-          fontSize: 27.0,
-          color: Colors.black54,
-          fontFamily: "Gotik"),
-    ),
-  );
+  /// Sentence Text header
+//  var _textHello = Padding(
+//    padding: const EdgeInsets.only(right: 50.0, left: 20.0),
+//    child: Text(
+//      "What would you like to search ?",
+//      style: TextStyle(
+//          letterSpacing: 0.1,
+//          fontWeight: FontWeight.w700,
+//          fontSize: 20.0,
+//          color: Colors.black54,
+//          fontFamily: "Roboto"),
+//    ),
+//  );
 
   /// Item TextFromField Search
   var _search = Padding(
@@ -46,13 +46,13 @@ class _searchAppbarState extends State<searchAppbar> {
                 border: InputBorder.none,
                   icon: Icon(
                     Icons.search,
-                    color: Color(0xFF6991C7),
+                    color: Color(0xDD000000),
                     size: 28.0,
                   ),
                   hintText: "Find you want",
                   hintStyle: TextStyle(
                       color: Colors.black54,
-                      fontFamily: "Gotik",
+                      fontFamily: "Roboto",
                       fontWeight: FontWeight.w400)),
             ),
           ),
@@ -73,7 +73,7 @@ class _searchAppbarState extends State<searchAppbar> {
             padding: const EdgeInsets.only(left: 20.0),
             child: Text(
               "Favorite",
-              style: TextStyle(fontFamily: "Gotik", color: Colors.black26),
+              style: TextStyle(fontFamily: "Roboto", color: Colors.black26),
             ),
           ),
           Expanded(
@@ -116,45 +116,45 @@ class _searchAppbarState extends State<searchAppbar> {
   );
 
   /// Popular Keyword Item
-  var _sugestedText = Container(
-    height: 145.0,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 20.0,top: 20.0),
-          child: Text(
-            "Populer Keyword",
-            style: TextStyle(fontFamily: "Gotik", color: Colors.black26),
-          ),
-        ),
-        Padding(padding: EdgeInsets.only(top: 20.0)),
-        Expanded(
-            child: ListView(
-          scrollDirection: Axis.horizontal,
-          children: <Widget>[
-            Padding(padding: EdgeInsets.only(left: 20.0)),
-            KeywordItem(
-              title: "Iphone X",
-              title2: "Mackbook",
-            ),
-            KeywordItem(
-              title: "Samsung",
-              title2: "Apple",
-            ),
-            KeywordItem(
-              title: "Note 9",
-              title2: "Nevada",
-            ),
-            KeywordItem(
-              title: "Watch",
-              title2: "PC",
-            ),
-          ],
-        ))
-      ],
-    ),
-  );
+//  var _sugestedText = Container(
+//    height: 145.0,
+//    child: Column(
+//      crossAxisAlignment: CrossAxisAlignment.start,
+//      children: <Widget>[
+//        Padding(
+//          padding: const EdgeInsets.only(left: 20.0,top: 20.0),
+//          child: Text(
+//            "Populer Keyword",
+//            style: TextStyle(fontFamily: "Gotik", color: Colors.black26),
+//          ),
+//        ),
+//        Padding(padding: EdgeInsets.only(top: 20.0)),
+//        Expanded(
+//            child: ListView(
+//          scrollDirection: Axis.horizontal,
+//          children: <Widget>[
+//            Padding(padding: EdgeInsets.only(left: 20.0)),
+//            KeywordItem(
+//              title: "Iphone X",
+//              title2: "Mackbook",
+//            ),
+//            KeywordItem(
+//              title: "Samsung",
+//              title2: "Apple",
+//            ),
+//            KeywordItem(
+//              title: "Note 9",
+//              title2: "Nevada",
+//            ),
+//            KeywordItem(
+//              title: "Watch",
+//              title2: "PC",
+//            ),
+//          ],
+//        ))
+//      ],
+//    ),
+//  );
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,25 +169,26 @@ class _searchAppbarState extends State<searchAppbar> {
               fontWeight: FontWeight.w700,
               fontSize: 18.0,
               color: Colors.black54,
-              fontFamily: "Gotik"),
+              fontFamily: "Roboto"),
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0.0,
+
       ),
       body: SingleChildScrollView(
         child: Container(
           color: Colors.white,
           child: Padding(
-            padding: EdgeInsets.only(top: 15.0),
+            padding: EdgeInsets.only(top: 0.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 /// Caliing a variable
-                _textHello,
+//                _textHello,
                 _search,
-                _sugestedText,
-                _favorite,
+//                _sugestedText,
+//                _favorite,
                 Padding(padding: EdgeInsets.only(bottom: 30.0, top: 2.0))
               ],
             ),
@@ -253,7 +254,7 @@ class KeywordItem extends StatelessWidget {
               title2,
               style: TextStyle(
                 color: Colors.black54,
-                fontFamily: "Sans",
+                fontFamily: "Roboto",
               ),
             ),
           ),
