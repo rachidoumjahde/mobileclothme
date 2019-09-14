@@ -1,13 +1,14 @@
 import 'package:treva_shop_flutter/Library/carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/ListItem/HomeGridItemRecomended.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/AppbarGradient.dart';
+import 'package:treva_shop_flutter/UI/home/AppbarGradient.dart';
 import 'package:treva_shop_flutter/Library/countdown/countdown.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/CategoryDetail.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/DetailProduct.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/FlashSale.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/MenuDetail.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/PromotionDetail.dart';
+import 'package:treva_shop_flutter/UI/product/CategoryDetail.dart';
+import 'package:treva_shop_flutter/UI/product/DetailProduct.dart';
+import 'package:treva_shop_flutter/UI/product/FlashSale.dart';
+import 'package:treva_shop_flutter/UI/home/MenuDetail.dart';
+import 'package:treva_shop_flutter/UI/product/PromotionDetail.dart';
+
 
 class Menu extends StatefulWidget {
   @override

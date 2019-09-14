@@ -2,12 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
-import 'package:treva_shop_flutter/UI/CartUIComponent/CartLayout.dart';
-import 'package:treva_shop_flutter/UI/LoginOrSignup/ChoseLoginOrSignup.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/Home.dart';
-import 'package:treva_shop_flutter/UI/LoginOrSignup/Login.dart';
-import 'package:treva_shop_flutter/UI/OnBoarding.dart';
+import 'package:treva_shop_flutter/UI/onboarding/OnBoarding.dart';
+
 
 /// Run first apps open
 void main() {

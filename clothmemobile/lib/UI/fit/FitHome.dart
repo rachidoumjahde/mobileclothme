@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:treva_shop_flutter/UI/AcountUIComponent/Notification.dart';
-import 'package:treva_shop_flutter/UI/CartUIComponent/CartLayout.dart';
+import 'package:treva_shop_flutter/UI/notification/Notification.dart';
+import 'package:treva_shop_flutter/UI/cart/CartLayout.dart';
+
 
 class FitHome extends StatelessWidget {
   // Make this specific to ios or android

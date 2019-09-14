@@ -4,8 +4,8 @@ import 'package:shimmer/shimmer.dart';
 import 'package:treva_shop_flutter/Library/countdown/countdown.dart';
 import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/ListItem/FlashSaleItem.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/FlashSaleDetail.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/Home.dart';
+import 'package:treva_shop_flutter/UI/product/FlashSaleDetail.dart';
+import 'package:treva_shop_flutter/UI/home/Home.dart';
 
 class flashSale extends StatefulWidget {
   @override
