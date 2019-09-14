@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/Library/carousel_pro/carousel_pro.dart';
 import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/Home.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Login.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Signup.dart';
 

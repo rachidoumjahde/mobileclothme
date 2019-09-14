@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/ListItem/CategoryItem.dart';
 import 'package:treva_shop_flutter/ListItem/CategoryItem.dart';
 import 'package:treva_shop_flutter/ListItem/CategoryItem.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/PromotionDetail.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/Search.dart';
+import 'package:treva_shop_flutter/UI/product/PromotionDetail.dart';
+import 'package:treva_shop_flutter/UI/search/Search.dart';
 
 class categoryDetail extends StatefulWidget {
   @override

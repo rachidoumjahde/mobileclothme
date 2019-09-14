@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/BrandUIComponent/BrandLayout.dart';
-import 'package:treva_shop_flutter/UI/CartUIComponent/CartLayout.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/Home.dart';
-import 'package:treva_shop_flutter/UI/AcountUIComponent/Profile.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/Search.dart';
-import 'package:treva_shop_flutter/UI/MyFitUIComponent/my_fit_home.dart';
+import 'package:treva_shop_flutter/UI/brand/BrandLayout.dart';
+import 'package:treva_shop_flutter/UI/profile/Profile.dart';
+import 'package:treva_shop_flutter/UI/search/Search.dart';
+import 'fit/FitHome.dart';
+
 
 class bottomNavigationBar extends StatefulWidget {
   @override

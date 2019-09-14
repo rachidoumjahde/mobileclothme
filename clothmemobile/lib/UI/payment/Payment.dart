@@ -2,9 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
-import 'package:treva_shop_flutter/UI/CartUIComponent/CartLayout.dart';
-import 'package:treva_shop_flutter/UI/CartUIComponent/Delivery.dart';
-import 'package:treva_shop_flutter/UI/HomeUIComponent/Home.dart';
+
 
 class payment extends StatefulWidget {
   @override
@@ -12,12 +10,12 @@ class payment extends StatefulWidget {
 }
 
 class _paymentState extends State<payment> {
-  /// Duration for popup card if user succes to payment
+  /// Duration for popup card if user success to payment
   StartTime() async {
     return Timer(Duration(milliseconds: 1450), navigator);
   }
 
-  /// Navigation to route after user succes payment
+  /// Navigation to route after user success payment
   void navigator() {
     Navigator.of(context).pushReplacement(PageRouteBuilder(
         pageBuilder: (_, __, ___) => new bottomNavigationBar()));
