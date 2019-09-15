@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/Library/carousel_pro/carousel_pro.dart';
 import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Login.dart';
-import 'package:treva_shop_flutter/UI/LoginOrSignup/Signup.dart';
+import 'package:treva_shop_flutter/UI/signup/Signup.dart';
 
 
 class ChoseLogin extends StatefulWidget {

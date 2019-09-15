@@ -17,7 +17,7 @@ class detailProduk extends StatefulWidget {
   _detailProdukState createState() => _detailProdukState(gridItem);
 }
 
-/// Detail Product for Recomended Grid in home screen
+/// Detail Product for Recommended Grid in home screen
 class _detailProdukState extends State<detailProduk> {
   double rating = 3.5;
   int starCount = 5;
