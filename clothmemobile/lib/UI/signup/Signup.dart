@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/Login.dart';
 import 'package:treva_shop_flutter/UI/LoginOrSignup/LoginAnimation.dart';
-import 'package:treva_shop_flutter/UI/LoginOrSignup/Signup.dart';
+import 'package:treva_shop_flutter/UI/signup/Signup.dart';
 
 
 class Signup extends StatefulWidget {
