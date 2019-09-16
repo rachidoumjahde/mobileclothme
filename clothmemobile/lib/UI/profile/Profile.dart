@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/UI/about/AboutApps.dart';
 import 'package:treva_shop_flutter/UI/about/CallCenter.dart';
 import 'package:treva_shop_flutter/UI/message/Message.dart';
-import 'package:treva_shop_flutter/UI/LoginOrSignup/ChoseLoginOrSignup.dart';
 import 'package:treva_shop_flutter/UI/payment/CreditCardSetting.dart';
 import 'package:treva_shop_flutter/UI/order/MyOrders.dart';
 import 'package:treva_shop_flutter/UI/notification/Notification.dart';
 import 'package:treva_shop_flutter/UI/setting/SettingAcount.dart';
-import 'package:treva_shop_flutter/UI/signup/Signup.dart';
+
 
 class profile extends StatefulWidget {
   @override

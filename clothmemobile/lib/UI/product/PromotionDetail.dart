@@ -9,14 +9,12 @@ class promoDetail extends StatefulWidget {
   _promoDetailState createState() => _promoDetailState();
 }
 
-
-
 class _promoDetailState extends State<promoDetail> {
-
   ///
   /// Get image data dummy from firebase server
   ///
-  var imageNetwork = NetworkImage("https://firebasestorage.googleapis.com/v0/b/beauty-look.appspot.com/o/Screenshot_20181005-213931.png?alt=media&token=e6287f67-5bc0-4225-8e96-1623dc9dc42f");
+  var imageNetwork = NetworkImage(
+      "https://firebasestorage.googleapis.com/v0/b/beauty-look.appspot.com/o/Screenshot_20181005-213931.png?alt=media&token=e6287f67-5bc0-4225-8e96-1623dc9dc42f");
 
   ///
   /// check the condition is right or wrong for image loaded or no
@@ -28,14 +26,15 @@ class _promoDetailState extends State<promoDetail> {
   ///
   @override
   void initState() {
-     Timer(Duration(seconds: 3),(){
-setState(() {
-  imageLoad=false;
-});
- });
+    Timer(Duration(seconds: 3), () {
+      setState(() {
+        imageLoad = false;
+      });
+    });
     // TODO: implement initState
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     /// Item Search in bottom of appbar
@@ -43,14 +42,15 @@ setState(() {
         height: 50.0,
         decoration: BoxDecoration(
             color: Colors.white,
-            border: Border.all(color: Colors.grey.withOpacity(0.2), width: 1.0)),
+            border:
+                Border.all(color: Colors.grey.withOpacity(0.2), width: 1.0)),
         child: Padding(
           padding: const EdgeInsets.only(left: 20.0),
           child: Theme(
             data: ThemeData(hintColor: Colors.transparent),
             child: TextFormField(
               decoration: InputDecoration(
-                border: InputBorder.none,
+                  border: InputBorder.none,
                   icon: Icon(
                     Icons.search,
                     color: Colors.black38,
@@ -76,21 +76,23 @@ setState(() {
             /// Card to set card loading animation
             ///
             ///
-            imageLoad? _imageLoading(context):
-            GridView.count(
-              shrinkWrap: true,
-              padding: EdgeInsets.symmetric(horizontal: 7.0, vertical: 10.0),
-              crossAxisSpacing: 10.0,
-              mainAxisSpacing: 15.0,
-              childAspectRatio: 0.545,
-              crossAxisCount: 2,
-              primary: false,
-              children:List.generate(
-                /// Get data in flashSaleItem.dart (ListItem folder)
-                promotionItem.length,
-                    (index) => ItemGrid(promotionItem[index]),
-              ),
-            )
+            imageLoad
+                ? _imageLoading(context)
+                : GridView.count(
+                    shrinkWrap: true,
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 7.0, vertical: 10.0),
+                    crossAxisSpacing: 10.0,
+                    mainAxisSpacing: 15.0,
+                    childAspectRatio: 0.545,
+                    crossAxisCount: 2,
+                    primary: false,
+                    children: List.generate(
+                      /// Get data in flashSaleItem.dart (ListItem folder)
+                      promotionItem.length,
+                      (index) => ItemGrid(promotionItem[index]),
+                    ),
+                  )
           ],
         ),
       ),
@@ -265,9 +267,7 @@ class loadingMenuItemCard extends StatelessWidget {
       padding: const EdgeInsets.only(
           top: 20.0, left: 10.0, bottom: 10.0, right: 0.0),
       child: InkWell(
-        onTap: (){
-
-        },
+        onTap: () {},
         child: Container(
           decoration: BoxDecoration(
               color: Colors.white,
@@ -316,24 +316,24 @@ class loadingMenuItemCard extends StatelessWidget {
                         ],
                       ),
                       Padding(
-                          padding: const EdgeInsets.only(left: 10.0, right: 5.0,top: 12.0),
+                          padding: const EdgeInsets.only(
+                              left: 10.0, right: 5.0, top: 12.0),
                           child: Container(
                             height: 9.5,
                             width: 130.0,
                             color: Colors.black12,
-                          )
-                      ),
+                          )),
                       Padding(
-                          padding: const EdgeInsets.only(left: 10.0, right: 5.0,top: 10.0),
+                          padding: const EdgeInsets.only(
+                              left: 10.0, right: 5.0, top: 10.0),
                           child: Container(
                             height: 9.5,
                             width: 80.0,
                             color: Colors.black12,
-                          )
-                      ),
+                          )),
                       Padding(
                         padding: const EdgeInsets.only(
-                            left: 15.0, right: 15.0, top: 7.0,bottom: 0.0),
+                            left: 15.0, right: 15.0, top: 7.0, bottom: 0.0),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -367,13 +367,12 @@ class loadingMenuItemCard extends StatelessWidget {
   }
 }
 
-
 ///
 ///
 /// Calling imageLoading animation for set a grid layout
 ///
 ///
-Widget _imageLoading(BuildContext context){
+Widget _imageLoading(BuildContext context) {
   return GridView.count(
     shrinkWrap: true,
     padding: EdgeInsets.symmetric(horizontal: 7.0, vertical: 10.0),
@@ -382,10 +381,10 @@ Widget _imageLoading(BuildContext context){
     childAspectRatio: 0.545,
     crossAxisCount: 2,
     primary: false,
-    children:List.generate(
+    children: List.generate(
       /// Get data in PromotionDetail.dart (ListItem folder)
       promotionItem.length,
-          (index) => loadingMenuItemCard(),
+      (index) => loadingMenuItemCard(),
     ),
   );
 }

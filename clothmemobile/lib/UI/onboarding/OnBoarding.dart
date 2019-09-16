@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/Models/page_view_model.dart';
 import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/intro_views_flutter.dart';
 
-import '../LoginOrSignup/Login.dart';
+import '../signin/Login.dart';
 
 
 class OnBoarding extends StatefulWidget {

@@ -1,26 +1,12 @@
 import 'package:flutter/material.dart';
 
-class searchAppbar extends StatefulWidget {
+class SearchAppbar extends StatefulWidget {
   @override
-  _searchAppbarState createState() => _searchAppbarState();
+  _SearchAppbarState createState() => _SearchAppbarState();
 }
 
-class _searchAppbarState extends State<searchAppbar> {
+class _SearchAppbarState extends State<SearchAppbar> {
   @override
-
-  /// Sentence Text header
-//  var _textHello = Padding(
-//    padding: const EdgeInsets.only(right: 50.0, left: 20.0),
-//    child: Text(
-//      "What would you like to search ?",
-//      style: TextStyle(
-//          letterSpacing: 0.1,
-//          fontWeight: FontWeight.w700,
-//          fontSize: 20.0,
-//          color: Colors.black54,
-//          fontFamily: "Roboto"),
-//    ),
-//  );
 
   /// Item TextFromField Search
   var _search = Padding(
@@ -49,7 +35,7 @@ class _searchAppbarState extends State<searchAppbar> {
                     color: Color(0xDD000000),
                     size: 28.0,
                   ),
-                  hintText: "Find you want",
+                  hintText: "Search for Brand",
                   hintStyle: TextStyle(
                       color: Colors.black54,
                       fontFamily: "Roboto",
@@ -115,46 +101,6 @@ class _searchAppbarState extends State<searchAppbar> {
     ),
   );
 
-  /// Popular Keyword Item
-//  var _sugestedText = Container(
-//    height: 145.0,
-//    child: Column(
-//      crossAxisAlignment: CrossAxisAlignment.start,
-//      children: <Widget>[
-//        Padding(
-//          padding: const EdgeInsets.only(left: 20.0,top: 20.0),
-//          child: Text(
-//            "Populer Keyword",
-//            style: TextStyle(fontFamily: "Gotik", color: Colors.black26),
-//          ),
-//        ),
-//        Padding(padding: EdgeInsets.only(top: 20.0)),
-//        Expanded(
-//            child: ListView(
-//          scrollDirection: Axis.horizontal,
-//          children: <Widget>[
-//            Padding(padding: EdgeInsets.only(left: 20.0)),
-//            KeywordItem(
-//              title: "Iphone X",
-//              title2: "Mackbook",
-//            ),
-//            KeywordItem(
-//              title: "Samsung",
-//              title2: "Apple",
-//            ),
-//            KeywordItem(
-//              title: "Note 9",
-//              title2: "Nevada",
-//            ),
-//            KeywordItem(
-//              title: "Watch",
-//              title2: "PC",
-//            ),
-//          ],
-//        ))
-//      ],
-//    ),
-//  );
 
   Widget build(BuildContext context) {
     return Scaffold(
