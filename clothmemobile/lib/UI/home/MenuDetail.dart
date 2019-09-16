@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/ListItem/MenuItem.dart';
 import 'package:treva_shop_flutter/UI/product/PromotionDetail.dart';
-import 'package:treva_shop_flutter/UI/search/Search.dart';
+import 'package:treva_shop_flutter/UI/searchd/Search.dart';
 import 'package:shimmer/shimmer.dart';
 
 class menuDetail extends StatefulWidget {
@@ -301,7 +301,7 @@ setState(() {
           InkWell(
             onTap: () {
               Navigator.of(context).push(PageRouteBuilder(
-                  pageBuilder: (_, __, ___) => new searchAppbar()));
+                  pageBuilder: (_, __, ___) => new SearchAppbar()));
             },
             child: IconButton(
               onPressed: null,

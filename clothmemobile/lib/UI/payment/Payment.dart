@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
 
 
-class payment extends StatefulWidget {
+class Payment extends StatefulWidget {
   @override
-  _paymentState createState() => _paymentState();
+  _PaymentState createState() => _PaymentState();
 }
 
-class _paymentState extends State<payment> {
+class _PaymentState extends State<Payment> {
   /// Duration for popup card if user success to payment
   StartTime() async {
     return Timer(Duration(milliseconds: 1450), navigator);
@@ -30,7 +30,7 @@ class _paymentState extends State<payment> {
 
   /// Custom Text
   var _customStyle = TextStyle(
-      fontFamily: "Gotik",
+      fontFamily: "Roboto",
       fontWeight: FontWeight.w800,
       color: Colors.black,
       fontSize: 17.0);
@@ -51,7 +51,7 @@ class _paymentState extends State<payment> {
               fontWeight: FontWeight.w700,
               fontSize: 18.0,
               color: Colors.black54,
-              fontFamily: "Gotik"),
+              fontFamily: "Roboto"),
         ),
         centerTitle: true,
         backgroundColor: Colors.white,

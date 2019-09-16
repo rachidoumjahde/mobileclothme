@@ -89,7 +89,7 @@ class _cartState extends State<cart> {
                         items.removeAt(position);
                       });
                       ///
-                      /// SnackBar show if cart delet
+                      /// SnackBar show if cart delete
                       ///
                       Scaffold.of(context)
                           .showSnackBar(SnackBar(content: Text("Items Cart Deleted"),duration: Duration(seconds: 2),backgroundColor: Colors.redAccent,));

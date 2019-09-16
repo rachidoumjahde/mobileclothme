@@ -4,10 +4,8 @@ import 'package:shimmer/shimmer.dart';
 import 'package:treva_shop_flutter/Library/carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/ListItem/CategoryItem.dart';
-import 'package:treva_shop_flutter/ListItem/CategoryItem.dart';
-import 'package:treva_shop_flutter/ListItem/CategoryItem.dart';
 import 'package:treva_shop_flutter/UI/product/PromotionDetail.dart';
-import 'package:treva_shop_flutter/UI/search/Search.dart';
+import 'package:treva_shop_flutter/UI/searchd/Search.dart';
 
 class categoryDetail extends StatefulWidget {
   @override
@@ -292,7 +290,7 @@ setState(() {
           IconButton(
             onPressed:(){
               Navigator.of(context).push(PageRouteBuilder(
-                  pageBuilder: (_, __, ___) => new searchAppbar()));
+                  pageBuilder: (_, __, ___) => new SearchAppbar()));
             },
             icon: Icon(Icons.search, color: Color(0xFF6991C7)),
           ),

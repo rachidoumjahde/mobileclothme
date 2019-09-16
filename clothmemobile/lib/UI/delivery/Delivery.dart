@@ -78,7 +78,7 @@ class _deliveryState extends State<delivery> {
                 InkWell(
                   onTap: () {
                     Navigator.of(context).pushReplacement(PageRouteBuilder(
-                        pageBuilder: (_, __, ___) => payment()));
+                        pageBuilder: (_, __, ___) => Payment()));
                   },
                   child: Container(
                     height: 55.0,

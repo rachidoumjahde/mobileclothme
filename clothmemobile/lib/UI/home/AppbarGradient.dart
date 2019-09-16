@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/UI/notification/Notification.dart';
-import 'package:treva_shop_flutter/UI/search/Search.dart';
+import 'package:treva_shop_flutter/UI/searchd/Search.dart';
 import 'package:treva_shop_flutter/UI/message/Message.dart';
 
 class AppbarGradient extends StatefulWidget {
@@ -42,7 +42,7 @@ class _AppbarGradientState extends State<AppbarGradient> {
           InkWell(
             onTap: () {
               Navigator.of(context).push(PageRouteBuilder(
-                  pageBuilder: (_, __, ___) => searchAppbar(),
+                  pageBuilder: (_, __, ___) => SearchAppbar(),
                   /// transtation duration in animation
                   transitionDuration: Duration(milliseconds: 750),
                   /// animation route to search layout

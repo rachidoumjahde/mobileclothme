@@ -1,10 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
-import 'package:treva_shop_flutter/UI/LoginOrSignup/Login.dart';
-import 'package:treva_shop_flutter/UI/LoginOrSignup/LoginAnimation.dart';
-import 'package:treva_shop_flutter/UI/signup/Signup.dart';
+import 'package:treva_shop_flutter/UI/signin/Login.dart';
+import 'package:treva_shop_flutter/UI/signin/LoginAnimation.dart';
 
 
 class Signup extends StatefulWidget {
@@ -172,7 +170,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                         ],
                       ),
 
-                      /// Set Animaion after user click buttonLogin
+                      /// Set Animation after user click buttonLogin
                       tap == 0
                           ? InkWell(
                               splashColor: Colors.yellow,
@@ -183,7 +181,7 @@ class _SignupState extends State<Signup> with TickerProviderStateMixin {
                                 _PlayAnimation();
                                 return tap;
                               },
-                              child: buttonBlackBottom(),
+                              child: ButtonBlackBottom(),
                             )
                           : new LoginAnimation(
                               animationController: sanimationController.view,
@@ -250,7 +248,7 @@ class textFromField extends StatelessWidget {
 }
 
 ///ButtonBlack class
-class buttonBlackBottom extends StatelessWidget {
+class ButtonBlackBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(

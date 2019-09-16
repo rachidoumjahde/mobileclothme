@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/LoginOrSignup/LoginAnimation.dart';
+import 'package:treva_shop_flutter/UI/signin/LoginAnimation.dart';
 import 'package:treva_shop_flutter/UI/signup/Signup.dart';
 
 
@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen>
     sanimationController.dispose();
   }
 
-  /// Playanimation set forward reverse
+  /// PlayAnimation set forward reverse
   Future<Null> _PlayAnimation() async {
     try {
       await sanimationController.forward();
@@ -213,7 +213,7 @@ class _LoginScreenState extends State<LoginScreen>
                             _PlayAnimation();
                             return tap;
                           },
-                          child: buttonBlackBottom(),
+                          child: ButtonBlackBottom(),
                         )
                       : new LoginAnimation(
                           animationController: sanimationController.view,

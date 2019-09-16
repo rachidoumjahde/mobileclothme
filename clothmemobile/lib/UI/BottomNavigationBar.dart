@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/UI/brand/BrandLayout.dart';
 import 'package:treva_shop_flutter/UI/profile/Profile.dart';
-import 'package:treva_shop_flutter/UI/search/Search.dart';
+import 'package:treva_shop_flutter/UI/searchd/Search.dart';
+import 'package:treva_shop_flutter/search/Search.dart';
 import 'fit/FitHome.dart';
 
 
@@ -19,7 +20,7 @@ class _bottomNavigationBarState extends State<bottomNavigationBar> {
       case 0:
         return new FitHome();
       case 1:
-        return new searchAppbar();
+        return new Search();
       case 2:
         return new brand();
       case 3:
