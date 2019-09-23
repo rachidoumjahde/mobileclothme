@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:treva_shop_flutter/Theme/themes.dart';
 import 'package:treva_shop_flutter/UI/onboarding/OnBoarding.dart';
 import 'package:redux/redux.dart'; // new
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:treva_shop_flutter/reduxStore/store/AppState.dart';
 import 'package:treva_shop_flutter/reduxStore/reducer/AppReducer.dart';
 
+import 'Theme/custom_theme.dart';
 import 'UI/splash/splash.dart';
 
 
-/// Run first apps open
-void main() => runApp(MyApp());
+/// Run first apps wrapped in CustomTheme
+void main() => runApp(
+    CustomTheme(
+      initialThemeKey: MyThemeKeys.LIGHT,
+      child: MyApp(),
+    )
+);
 
 /// Set orientation
 class MyApp extends StatelessWidget {
@@ -38,6 +45,7 @@ class MyApp extends StatelessWidget {
         store: store,
         child: MaterialApp(
           title: "ClothME",
+          //theme: CustomTheme.of(context),
           theme: ThemeData(
               brightness: Brightness.light,
               backgroundColor: Colors.white,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:treva_shop_flutter/UI/fit/widget/brandDetails.dart';
 import 'package:treva_shop_flutter/UI/notification/Notification.dart';
 import 'package:treva_shop_flutter/UI/cart/CartLayout.dart';
 
@@ -12,7 +13,11 @@ class FitHome extends StatelessWidget {
           backgroundColor: new Color(0xfff8faf8),
           centerTitle: true,
           elevation: 2.0,
-          leading: new Icon(Icons.menu),
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            tooltip: 'Navigation Menu',
+            onPressed: null,
+          ),
           title: Text(
             "My Sizes",
             style: TextStyle(
@@ -37,7 +42,7 @@ class FitHome extends StatelessWidget {
                 ))
           ],
         ),
-        body: new Row(
+        body: Row(
           children: <Widget>[
             Expanded(
               child: SizedBox(
@@ -49,36 +54,7 @@ class FitHome extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     Divider(),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(16.0, 8.0, 8.0, 6.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              new Container(
-                                height: 40.0,
-                                width: 40.0,
-                                decoration: new BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: new DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: new NetworkImage(
-                                          "https://pbs.twimg.com/profile_images/916384996092448768/PF1TSFOE_400x400.jpg")),
-                                ),
-                              ),
-                              new SizedBox(
-                                width: 10.0,
-                              ),
-                              new Text(
-                                "Zara Man. Toronto",
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                    BrandDetails(),
                     Divider(),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(10.0, 8.0, 4.0, 8.0),
@@ -86,7 +62,7 @@ class FitHome extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
                           Row(children: <Widget>[
-                            new Container(
+                            Container(
                               height: 20.0,
                               child: Text(
                                 "99% Fit For Paul Ikhane, Get it Now for 30% OFF",
@@ -101,7 +77,7 @@ class FitHome extends StatelessWidget {
                     ),
                     Flexible(
                       fit: FlexFit.loose,
-                      child: new Image.network(
+                      child: Image.network(
                         "https://images.pexels.com/photos/672657/pexels-photo-672657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
                         fit: BoxFit.cover,
                       ),
@@ -111,27 +87,27 @@ class FitHome extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          new Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              new IconButton(
+                              IconButton(
                                 icon: Icon(FontAwesomeIcons.heart),
                                 onPressed: () =>
                                     {_navigateNotification(context)},
                               ),
-                              new SizedBox(
+                              SizedBox(
                                 width: 16.0,
                               ),
                               // Add some information about the fit here
-                              new IconButton(
+                              IconButton(
                                 icon: Icon(FontAwesomeIcons.comment),
                                 onPressed: () =>
                                     {_navigateNotification(context)},
                               ),
-                              new SizedBox(
+                              SizedBox(
                                 width: 180.0,
                               ),
-                              new Container(
+                              Container(
                                   child: InkWell(
                                     onTap: () {},
                                     child: ButtonBuy(),
@@ -150,10 +126,12 @@ class FitHome extends StatelessWidget {
                     ),
                   ],
                 ),
-              )),
+              )
+              ),
             ),
           ],
-        ));
+        )
+    );
   }
 }
 

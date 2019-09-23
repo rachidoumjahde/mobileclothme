@@ -71,7 +71,7 @@ class ItemCard extends StatelessWidget {
           Navigator.of(context).push(
             PageRouteBuilder(
                 pageBuilder: (_, __, ___) => new brandDetail(brand),
-                transitionDuration: Duration(milliseconds: 400),
+                transitionDuration: Duration(milliseconds: 300),
                 transitionsBuilder:
                     (_, Animation<double> animation, __, Widget child) {
                   return Opacity(
