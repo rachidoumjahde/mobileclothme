@@ -1,6 +1,10 @@
 import 'package:meta/meta.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:treva_shop_flutter/core.dart';
+import 'package:treva_shop_flutter/src/model/measurement_bottom.dart';
+import 'package:treva_shop_flutter/src/model/measurement_full.dart';
+import 'package:treva_shop_flutter/src/model/measurement_top.dart';
+import 'package:treva_shop_flutter/src/model/measurement_feet.dart';
 
 
 class User {
@@ -13,6 +17,10 @@ class User {
   final Profession profession;
   final String headLine;
   final String avatarUrl;
+  final MeasurementTop measurementTop;
+  final MeasurementBottom measurementBottom;
+  final MeasurementFull measurementFull;
+  final MeasurementFeet measurementFeet;
 
   User({
     @required this.id,
@@ -20,10 +28,14 @@ class User {
     this.lastName,
     this.dateOfBirth,
     this.gender,
-    @required this.address,
+    this.address,
     this.profession,
     this.headLine,
     this.avatarUrl,
+    this.measurementTop,
+    this.measurementBottom,
+    this.measurementFull,
+    this.measurementFeet
   });
 
   @override
@@ -38,7 +50,10 @@ class User {
               gender == other.gender &&
               profession == other.profession &&
               headLine == other.headLine &&
-              avatarUrl == other.avatarUrl;
+              avatarUrl == other.avatarUrl &&
+              measurementTop == other.measurementTop &&
+              measurementBottom == other.measurementBottom &&
+              measurementFeet == other.measurementFeet;
 
   @override
   int get hashCode =>
@@ -49,7 +64,11 @@ class User {
       gender.hashCode ^
       profession.hashCode ^
       headLine.hashCode ^
-      avatarUrl.hashCode;
+      avatarUrl.hashCode ^
+      measurementTop.hashCode ^
+      measurementBottom.hashCode ^
+      measurementFull.hashCode ^
+      measurementFeet.hashCode;
 }
 
 

@@ -4,20 +4,30 @@ import 'package:treva_shop_flutter/core.dart';
 
 
 class Brand {
+  final String id;
+  final Company owner;
   final String name;
-  final String start_date;
-  final GenderType genderType;
+  final String startDate;
+  final String genderType;
   final KtList<Address> address;
   final String headLine;
+  final String returnsInfo;
+  final String deliveryInfo;
   final String logoUrl;
+  final DateTime createdDate;
 
   Brand({
+    @required this.id,
+    @required this.owner,
     @required this.name,
-    this.start_date,
-    this.genderType,
-    @required this.address,
+    this.startDate,
+    @required this.genderType,
+    this.address,
     this.headLine,
-    this.logoUrl,
+    this.returnsInfo,
+    this.deliveryInfo,
+    @required this.logoUrl,
+    @required this.createdDate,
   });
 
   @override
@@ -25,26 +35,32 @@ class Brand {
       identical(this, other) ||
           other is Brand &&
               runtimeType == other.runtimeType &&
+              id == other.id &&
+              owner == other.owner &&
               name == other.name &&
-              start_date == other.start_date &&
+              startDate == other.startDate &&
               genderType == other.genderType &&
               address == other.address &&
               headLine == other.headLine &&
-              logoUrl == other.logoUrl;
+              returnsInfo == other.returnsInfo &&
+              deliveryInfo == other.deliveryInfo &&
+              logoUrl == other.logoUrl &&
+              createdDate == other.createdDate;
 
   @override
   int get hashCode =>
+      id.hashCode ^
+      owner.hashCode ^
       name.hashCode ^
-      start_date.hashCode ^
+      startDate.hashCode ^
       genderType.hashCode ^
       headLine.hashCode ^
-      logoUrl.hashCode;
+      returnsInfo.hashCode ^
+      deliveryInfo.hashCode ^
+      logoUrl.hashCode ^
+      createdDate.hashCode;
+
 }
 
 
-enum GenderType {
-  female,
-  male,
-  unisex
-}
 

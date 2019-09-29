@@ -3,6 +3,7 @@ import 'package:meta/meta.dart';
 
 class MeasurementTop {
   //  variables = {'width': double, 'height': double}
+  final String id;
   final Map head;
   final Map neck;
   final Map shoulder;
@@ -17,6 +18,7 @@ class MeasurementTop {
   final Map waist;
 
   MeasurementTop({
+    this.id,
     this.head,
     this.neck,
     this.shoulder,
@@ -36,6 +38,7 @@ class MeasurementTop {
       identical(this, other) ||
           other is MeasurementTop &&
               runtimeType == other.runtimeType &&
+              id == other.id &&
               head == other.head &&
               neck == other.neck &&
               shoulder == other.shoulder &&
@@ -51,6 +54,7 @@ class MeasurementTop {
 
   @override
   int get hashCode =>
+      id.hashCode ^
       head.hashCode ^
       neck.hashCode ^
       shoulder.hashCode ^
