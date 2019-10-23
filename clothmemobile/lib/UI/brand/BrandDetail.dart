@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/ListItem/BrandDataList.dart';
-import 'package:treva_shop_flutter/UI/chat/Chat.dart';
-import 'package:treva_shop_flutter/UI/home/Home.dart';
+import 'package:clothme/ListItem/BrandDataList.dart';
+import 'package:clothme/UI/chat/Chat.dart';
+import 'package:clothme/UI/home/Home.dart';
 
 
 class brandDetail extends StatefulWidget {
@@ -260,7 +260,7 @@ class _brandDetailState extends State<brandDetail> {
                               ontap: () {
                                 Navigator.of(context).push(PageRouteBuilder(
                                     pageBuilder: (_, __, ___) =>
-                                        new privatemessage(brand)));
+                                        new Privatemessage(brand)));
                               },
                             ),
                             Padding(padding: EdgeInsets.only(top: 10.0)),

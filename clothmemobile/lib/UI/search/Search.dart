@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/search/widget/search_bar.dart';
+import 'package:clothme/UI/search/widget/search_bar.dart';
 
 class Search extends StatefulWidget {
   Search({Key key}) : super(key: key);

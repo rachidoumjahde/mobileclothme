@@ -1,4 +1,4 @@
-package com.clothme.clothme;
+package com.clothme;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

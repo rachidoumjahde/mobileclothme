@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
-import 'package:treva_shop_flutter/UI/payment/Payment.dart';
+import 'package:clothme/UI/payment/Payment.dart';
 
-class delivery extends StatefulWidget {
+class Delivery extends StatefulWidget {
   @override
-  _deliveryState createState() => _deliveryState();
+  _DeliveryState createState() => _DeliveryState();
 }
 
-class _deliveryState extends State<delivery> {
+class _DeliveryState extends State<Delivery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

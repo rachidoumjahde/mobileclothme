@@ -1,9 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/Library/carousel_pro/carousel_pro.dart';
-import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
-import 'package:treva_shop_flutter/UI/signin/Login.dart';
-import 'package:treva_shop_flutter/UI/signup/Signup.dart';
+import 'package:clothme/UI/signup/Signup.dart';
+import 'package:clothme/Library/carousel_pro/src/carousel_pro.dart';
+
+import '../BottomNavigationBar.dart';
+import 'Login.dart';
 
 
 class ChoseLogin extends StatefulWidget {

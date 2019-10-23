@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/brand/BrandLayout.dart';
-import 'package:treva_shop_flutter/UI/profile/Profile.dart';
-import 'package:treva_shop_flutter/UI/search/Search.dart';
+import 'brand/BrandLayout.dart';
 import 'fit/FitHome.dart';
+import 'profile/Profile.dart';
+import 'search/Search.dart';
 
 
 class BottomNavigation extends StatefulWidget {

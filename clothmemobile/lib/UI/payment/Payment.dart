@@ -1,7 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
+import 'package:clothme/UI/BottomNavigationBar.dart';
 
 
 class Payment extends StatefulWidget {

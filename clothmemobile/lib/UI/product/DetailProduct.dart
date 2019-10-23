@@ -1,11 +1,11 @@
-import 'package:treva_shop_flutter/Library/carousel_pro/carousel_pro.dart';
+import 'package:clothme/Library/carousel_pro/src/carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/ListItem/HomeGridItemRecomended.dart';
-import 'package:treva_shop_flutter/UI/cart/CartLayout.dart';
-import 'package:treva_shop_flutter/UI/chat/ChatItem.dart';
-import 'package:treva_shop_flutter/UI/delivery/Delivery.dart';
+import 'package:clothme/ListItem/HomeGridItemRecomended.dart';
+import 'package:clothme/UI/cart/CartLayout.dart';
+import 'package:clothme/UI/chat/ChatItem.dart';
+import 'package:clothme/UI/delivery/Delivery.dart';
 import 'package:flutter_rating/flutter_rating.dart';
-import 'package:treva_shop_flutter/UI/product/ReviewLayout.dart';
+import 'package:clothme/UI/product/ReviewLayout.dart';
 
 
 class detailProduk extends StatefulWidget {
@@ -635,7 +635,7 @@ class _detailProdukState extends State<detailProduk> {
                     InkWell(
                       onTap: () {
                         Navigator.of(context).push(PageRouteBuilder(
-                            pageBuilder: (_, __, ___) => new delivery()));
+                            pageBuilder: (_, __, ___) => new Delivery()));
                       },
                       child: Container(
                         height: 45.0,

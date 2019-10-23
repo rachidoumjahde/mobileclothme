@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:treva_shop_flutter/Theme/themes.dart';
-import 'package:treva_shop_flutter/UI/onboarding/OnBoarding.dart';
 import 'package:redux/redux.dart'; // new
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:treva_shop_flutter/redux/store/AppState.dart';
-import 'package:treva_shop_flutter/redux/reducer/AppReducer.dart';
+import 'package:clothme/redux/reducer/AppReducer.dart';
 
 import 'Theme/custom_theme.dart';
+import 'Theme/themes.dart';
+import 'UI/onboarding/OnBoarding.dart';
 import 'UI/splash/splash.dart';
+import 'redux/reducer/AppReducer.dart';
+import 'redux/store/AppState.dart';
 
 
 /// Run first apps wrapped in CustomTheme

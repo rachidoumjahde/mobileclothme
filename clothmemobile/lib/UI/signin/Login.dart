@@ -1,8 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/signin/LoginAnimation.dart';
-import 'package:treva_shop_flutter/UI/signup/Signup.dart';
+import 'package:clothme/UI/signup/Signup.dart';
+
+import 'LoginAnimation.dart';
 
 
 class LoginScreen extends StatefulWidget {

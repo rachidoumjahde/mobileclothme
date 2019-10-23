@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
+
+import '../BottomNavigationBar.dart';
 
 
 /// Component Login Animation to set Animation in login like a bounce ball to fullscreen

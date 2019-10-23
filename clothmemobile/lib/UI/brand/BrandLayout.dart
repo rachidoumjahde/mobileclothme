@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/brand/BrandDetail.dart';
-import 'package:treva_shop_flutter/ListItem/BrandDataList.dart';
+import 'package:clothme/UI/brand/BrandDetail.dart';
+import 'package:clothme/ListItem/BrandDataList.dart';
 
 class brand extends StatefulWidget {
   @override
