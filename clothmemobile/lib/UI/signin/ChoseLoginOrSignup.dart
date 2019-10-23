@@ -209,7 +209,7 @@ class _ChoseLoginState extends State<ChoseLogin> with TickerProviderStateMixin {
                                         Navigator.of(context).pushReplacement(
                                             PageRouteBuilder(
                                                 pageBuilder: (_, __, ___) =>
-                                                    new bottomNavigationBar()));
+                                                    new BottomNavigation()));
                                       },
                                       child: Text(
                                         "OR SKIP",

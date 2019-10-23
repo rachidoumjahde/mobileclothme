@@ -18,7 +18,7 @@ class _PaymentState extends State<Payment> {
   /// Navigation to route after user success payment
   void navigator() {
     Navigator.of(context).pushReplacement(PageRouteBuilder(
-        pageBuilder: (_, __, ___) => new bottomNavigationBar()));
+        pageBuilder: (_, __, ___) => new BottomNavigation()));
   }
 
   @override
