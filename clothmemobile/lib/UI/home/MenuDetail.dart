@@ -136,25 +136,13 @@ setState(() {
                 children: <Widget>[
                   /// Get keyword item class in Search.dart
                   Padding(padding: EdgeInsets.only(left: 20.0)),
-                  KeywordItem(
-                    title: "Action",
-                    title2: "Drone",
-                  ),
+
                   Padding(padding: EdgeInsets.only(left: 15.0)),
-                  KeywordItem(
-                    title: "Digital",
-                    title2: "Handycam",
-                  ),
+
                   Padding(padding: EdgeInsets.only(left: 15.0)),
-                  KeywordItem(
-                    title: "Analog",
-                    title2: "CCTV",
-                  ),
+
                   Padding(padding: EdgeInsets.only(left: 15.0)),
-                  KeywordItem(
-                    title: "Spy Cam",
-                    title2: "Acesoris",
-                  ),
+
                   Padding(padding: EdgeInsets.only(right: 20.0)),
                 ],
               ),

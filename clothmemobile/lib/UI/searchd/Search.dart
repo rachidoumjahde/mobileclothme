@@ -10,7 +10,7 @@ class _SearchAppbarState extends State<SearchAppbar> {
 
   /// Item TextFromField Search
   var _search = Padding(
-    padding: const EdgeInsets.only(top: 35.0, right: 20.0, left: 20.0),
+    padding: const EdgeInsets.only(right: 20.0, left: 20.0),
     child: Container(
       height: 50.0,
       decoration: BoxDecoration(
@@ -47,59 +47,6 @@ class _SearchAppbarState extends State<SearchAppbar> {
     ),
   );
 
-  /// Item Favorite Item with Card item
-  var _favorite = Padding(
-    padding: const EdgeInsets.only(top: 20.0),
-    child: Container(
-      height: 250.0,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: Text(
-              "Favorite",
-              style: TextStyle(fontFamily: "Roboto", color: Colors.black26),
-            ),
-          ),
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.only(top: 20.0, bottom: 2.0),
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                /// Get class FavoriteItem
-                Padding(padding: EdgeInsets.only(left: 20.0)),
-                FavoriteItem(
-                  image: "assets/imgItem/shoes1.jpg",
-                  title: "Firrona Skirt!",
-                  Salary: "\$ 10",
-                  Rating: "4.8",
-                  sale: "923 Sale",
-                ),
-                Padding(padding: EdgeInsets.only(left: 20.0)),
-                FavoriteItem(
-                  image: "assets/imgItem/acesoris1.jpg",
-                  title: "Arpenaz 4",
-                  Salary: "\$ 200",
-                  Rating: "4.2",
-                  sale: "892 Sale",
-                ),
-                Padding(padding: EdgeInsets.only(left: 20.0)),
-                FavoriteItem(
-                  image: "assets/imgItem/kids1.jpg",
-                  title: "Mon Cheri Pingun",
-                  Salary: "\$ 3",
-                  Rating: "4.8",
-                  sale: "110 Sale",
-                ),
-                Padding(padding: EdgeInsets.only(right: 10.0)),
-              ],
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
 
 
   Widget build(BuildContext context) {
@@ -130,11 +77,7 @@ class _SearchAppbarState extends State<SearchAppbar> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                /// Caliing a variable
-//                _textHello,
                 _search,
-//                _sugestedText,
-//                _favorite,
                 Padding(padding: EdgeInsets.only(bottom: 30.0, top: 2.0))
               ],
             ),
@@ -145,175 +88,4 @@ class _SearchAppbarState extends State<SearchAppbar> {
   }
 }
 
-/// Popular Keyword Item class
-class KeywordItem extends StatelessWidget {
-  @override
-  String title, title2;
 
-  KeywordItem({this.title, this.title2});
-
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top:4.0,left: 3.0),
-          child: Container(
-            height: 29.5,
-            width: 90.0,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(20.0)),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  blurRadius: 4.5,
-                  spreadRadius: 1.0,
-                )
-              ],
-            ),
-            child: Center(
-              child: Text(
-                title,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(color: Colors.black54, fontFamily: "Sans"),
-              ),
-            ),
-          ),
-        ),
-        Padding(padding: EdgeInsets.only(top: 15.0)),
-        Container(
-          height: 29.5,
-          width: 90.0,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(20.0)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                blurRadius: 4.5,
-                spreadRadius: 1.0,
-              )
-            ],
-          ),
-          child: Center(
-            child: Text(
-              title2,
-              style: TextStyle(
-                color: Colors.black54,
-                fontFamily: "Roboto",
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-///Favorite Item Card
-class FavoriteItem extends StatelessWidget {
-  String image, Rating, Salary, title, sale;
-
-  FavoriteItem({this.image, this.Rating, this.Salary, this.title, this.sale});
-
-  @override
-  Widget build(BuildContext context) {
-    MediaQueryData mediaQueryData = MediaQuery.of(context);
-    return Padding(
-      padding: const EdgeInsets.only(left:2.0),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            boxShadow: [
-              BoxShadow(
-                color: Color(0xFF656565).withOpacity(0.15),
-                blurRadius: 4.0,
-                spreadRadius: 1.0,
-//           offset: Offset(4.0, 10.0)
-              )
-            ]),
-        child: Wrap(
-          children: <Widget>[
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Container(
-                  height: 120.0,
-                  width: 150.0,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(7.0),
-                          topRight: Radius.circular(7.0)),
-                      image: DecorationImage(
-                          image: AssetImage(image), fit: BoxFit.cover)),
-                ),
-                Padding(padding: EdgeInsets.only(top: 15.0)),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                        letterSpacing: 0.5,
-                        color: Colors.black54,
-                        fontFamily: "Sans",
-                        fontWeight: FontWeight.w500,
-                        fontSize: 13.0),
-                  ),
-                ),
-                Padding(padding: EdgeInsets.only(top: 1.0)),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
-                  child: Text(
-                    Salary,
-                    style: TextStyle(
-                        fontFamily: "Sans",
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14.0),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 15.0, right: 15.0, top: 5.0),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            Rating,
-                            style: TextStyle(
-                                fontFamily: "Sans",
-                                color: Colors.black26,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 12.0),
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.yellow,
-                            size: 14.0,
-                          )
-                        ],
-                      ),
-                      Text(
-                        sale,
-                        style: TextStyle(
-                            fontFamily: "Sans",
-                            color: Colors.black26,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 12.0),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}

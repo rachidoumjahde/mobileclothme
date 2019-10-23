@@ -118,25 +118,13 @@ setState(() {
                 scrollDirection: Axis.horizontal,
                 children: <Widget>[
                   Padding(padding: EdgeInsets.only(left: 20.0)),
-                  KeywordItem(
-                    title: "Polo Shirt",
-                    title2: "Shirt",
-                  ),
+
                   Padding(padding: EdgeInsets.only(left: 15.0)),
-                  KeywordItem(
-                    title: "Suit",
-                    title2: "Jacket",
-                  ),
+
                   Padding(padding: EdgeInsets.only(left: 15.0)),
-                  KeywordItem(
-                    title: "Jeans",
-                    title2: "Bag",
-                  ),
+
                   Padding(padding: EdgeInsets.only(left: 15.0)),
-                  KeywordItem(
-                    title: "Watch",
-                    title2: "Shoes",
-                  ),
+
                   Padding(padding: EdgeInsets.only(right: 20.0)),
                 ],
               ),

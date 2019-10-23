@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:treva_shop_flutter/UI/brand/BrandLayout.dart';
 import 'package:treva_shop_flutter/UI/profile/Profile.dart';
-import 'package:treva_shop_flutter/UI/searchd/Search.dart';
-import 'package:treva_shop_flutter/search/Search.dart';
+import 'package:treva_shop_flutter/UI/search/Search.dart';
 import 'fit/FitHome.dart';
 
 

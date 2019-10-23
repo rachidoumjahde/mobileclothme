@@ -4,8 +4,8 @@ import 'package:treva_shop_flutter/Theme/themes.dart';
 import 'package:treva_shop_flutter/UI/onboarding/OnBoarding.dart';
 import 'package:redux/redux.dart'; // new
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:treva_shop_flutter/reduxStore/store/AppState.dart';
-import 'package:treva_shop_flutter/reduxStore/reducer/AppReducer.dart';
+import 'package:treva_shop_flutter/redux/store/AppState.dart';
+import 'package:treva_shop_flutter/redux/reducer/AppReducer.dart';
 
 import 'Theme/custom_theme.dart';
 import 'UI/splash/splash.dart';
