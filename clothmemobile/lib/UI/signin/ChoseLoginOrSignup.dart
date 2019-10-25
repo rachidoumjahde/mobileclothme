@@ -126,7 +126,7 @@ class _ChoseLoginState extends State<ChoseLogin> with TickerProviderStateMixin {
                               Center(
                                 /// Animation text ClothME accept from splashscreen layout (Click to open code)
                                 child: Hero(
-                                  tag: "Treva",
+                                  tag: "login_tag",
                                   child: Text(
                                     "ClothME",
                                     style: TextStyle(

@@ -107,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen>
 
                                 /// Animation text treva shop accept from signup layout (Click to open code)
                                 Hero(
-                                  tag: "Treva",
+                                  tag: "login_tag",
                                   child: Text(
                                     "ClothME",
                                     style: TextStyle(
