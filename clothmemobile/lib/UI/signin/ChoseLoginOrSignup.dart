@@ -393,7 +393,7 @@ class _AnimationSplashSignupState extends State<AnimationSplashSignup> {
     widget.animationController.addListener(() {
       if (widget.animation.isCompleted) {
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (BuildContext context) => new Signup()));
+            MaterialPageRoute(builder: (BuildContext context) => new SignUp()));
       }
     });
     return AnimatedBuilder(

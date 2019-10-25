@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class WelcomeMessage extends StatelessWidget {
+class WelcomeMessageWidget extends StatelessWidget {
   final welcomeText;
   final brandName;
-  const WelcomeMessage({Key key, this.welcomeText, this.brandName}): super(key: key);
+  const WelcomeMessageWidget({Key key, this.welcomeText, this.brandName}): super(key: key);
 
   @override
   Widget build(BuildContext context) {

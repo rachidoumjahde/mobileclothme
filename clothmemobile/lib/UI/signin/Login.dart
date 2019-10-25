@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:clothme/common/widget/text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:clothme/UI/signup/Signup.dart';
 
@@ -156,21 +157,21 @@ class _LoginScreenState extends State<LoginScreen>
                             /// TextFromField Email
                             Padding(
                                 padding: EdgeInsets.symmetric(vertical: 10.0)),
-                            textFromField(
+                            TextFieldInput(
                               icon: Icons.email,
-                              password: false,
-                              email: "Email",
-                              inputType: TextInputType.emailAddress,
+                              textHide: false,
+                              type: "Email",
+                              keyboardInputType: TextInputType.emailAddress,
                             ),
 
                             /// TextFromField Password
                             Padding(
                                 padding: EdgeInsets.symmetric(vertical: 10.0)),
-                            textFromField(
+                            TextFieldInput(
                               icon: Icons.vpn_key,
-                              password: true,
-                              email: "Password",
-                              inputType: TextInputType.text,
+                              textHide: true,
+                              type: "Password",
+                              keyboardInputType: TextInputType.text,
                             ),
 
                             /// Button Signup
@@ -180,7 +181,7 @@ class _LoginScreenState extends State<LoginScreen>
                                   Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
                                           builder: (BuildContext context) =>
-                                              new Signup()));
+                                              new SignUp()));
                                 },
                                 child: Text(
                                   "Not Have Acount? Sign Up",

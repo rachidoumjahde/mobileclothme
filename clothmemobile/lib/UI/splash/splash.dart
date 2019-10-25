@@ -60,7 +60,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           padding: EdgeInsets.only(top: 30.0),
                         ),
                         /// Animation text ClothME to choose Login with Hero Animation (Click to open code)
-                        const WelcomeMessage(welcomeText: "Welocime to", brandName: "Clothme")
+                        const WelcomeMessageWidget(welcomeText: "Welocime to", brandName: "Clothme")
                       ],
                     ),
                   ),
