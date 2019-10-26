@@ -5,11 +5,25 @@ class BlackButton extends StatelessWidget {
   final name;
   final fontSize;
   final width;
-  BlackButton({Key key, this.name, this.fontSize, this.width}): super(key: key);
+  final radius;
+  BlackButton({Key key, this.name, this.fontSize, this.width, this.radius}): super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return PhysicalModel(
+      borderRadius: BorderRadius.circular(radius),
+      color: Colors.black,
+      elevation: 3.0,
+      child: RaisedButton(
+        child: Text(name),
+        onPressed: (){},
+      ),
+    );
+  }
+}
+
+/*
+Padding(
       padding: EdgeInsets.all(30.0),
       child: Container(
         height: 55.0,
@@ -31,5 +45,4 @@ class BlackButton extends StatelessWidget {
                 colors: <Color>[Color(0xFF121940), Color(0xFF6E48AA)])),
       ),
     );
-  }
-}
+ */

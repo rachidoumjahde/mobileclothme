@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import '../BottomNavigationBar.dart';
 
 
-/// Component Login Animation to set Animation in login like a bounce ball to fullscreen
 class LoginAnimation extends StatefulWidget {
+
+  final AnimationController animationController;
+  final Animation animation;
   /// To set type animation and  start and end animation
   LoginAnimation({Key key, this.animationController})
       : animation = new Tween(
-          end: 900.0,
+          end: 500.0,
           begin: 70.0,
         ).animate(CurvedAnimation(
             parent: animationController, curve: Curves.bounceInOut)),
         super(key: key);
 
-  final AnimationController animationController;
-  final Animation animation;
 
   Widget _buildAnimation(BuildContext context, Widget child) {
     /// Setting shape a animation
@@ -26,7 +26,7 @@ class LoginAnimation extends StatefulWidget {
           width: animation.value,
           decoration: BoxDecoration(
             color: Color(0xFF3B2E6F),
-            shape: animation.value < 600 ? BoxShape.circle : BoxShape.rectangle,
+            shape: animation.value < 300 ? BoxShape.circle : BoxShape.rectangle,
           ),
         ));
   }
