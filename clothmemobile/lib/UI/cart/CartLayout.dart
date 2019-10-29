@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/ListItem/CartItemData.dart';
-import 'package:treva_shop_flutter/UI/delivery/Delivery.dart';
+import 'package:clothme/ListItem/CartItemData.dart';
+import 'package:clothme/UI/delivery/Delivery.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 class cart extends StatefulWidget {
@@ -262,7 +262,7 @@ class _cartState extends State<cart> {
                               InkWell(
                                 onTap: () {
                                   Navigator.of(context).push(PageRouteBuilder(
-                                      pageBuilder: (_, __, ___) => delivery()));
+                                      pageBuilder: (_, __, ___) => Delivery()));
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.only(right: 10.0),

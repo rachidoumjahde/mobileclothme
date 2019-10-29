@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:treva_shop_flutter/Theme/themes.dart';
+import 'package:clothme/Theme/themes.dart';
 
 //
 class _CustomTheme extends InheritedWidget {

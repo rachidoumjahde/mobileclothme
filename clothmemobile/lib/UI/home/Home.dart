@@ -1,13 +1,13 @@
-import 'package:treva_shop_flutter/Library/carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/ListItem/HomeGridItemRecomended.dart';
-import 'package:treva_shop_flutter/UI/home/AppbarGradient.dart';
-import 'package:treva_shop_flutter/Library/countdown/countdown.dart';
-import 'package:treva_shop_flutter/UI/product/CategoryDetail.dart';
-import 'package:treva_shop_flutter/UI/product/DetailProduct.dart';
-import 'package:treva_shop_flutter/UI/product/FlashSale.dart';
-import 'package:treva_shop_flutter/UI/home/MenuDetail.dart';
-import 'package:treva_shop_flutter/UI/product/PromotionDetail.dart';
+import 'package:clothme/Library/carousel_pro/src/carousel_pro.dart';
+import 'package:clothme/ListItem/HomeGridItemRecomended.dart';
+import 'package:clothme/UI/home/AppbarGradient.dart';
+import 'package:clothme/Library/countdown/countdown.dart';
+import 'package:clothme/UI/product/CategoryDetail.dart';
+import 'package:clothme/UI/product/DetailProduct.dart';
+import 'package:clothme/UI/product/FlashSale.dart';
+import 'package:clothme/UI/home/MenuDetail.dart';
+import 'package:clothme/UI/product/PromotionDetail.dart';
 
 
 class Menu extends StatefulWidget {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/chat/Chat.dart';
-import 'package:treva_shop_flutter/UI/chat/ChatItem.dart';
-import 'package:treva_shop_flutter/UI/message/Message.dart';
+import 'package:clothme/UI/chat/ChatItem.dart';
+
 
 class callCenter extends StatefulWidget {
  @override

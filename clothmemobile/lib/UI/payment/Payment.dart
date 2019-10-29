@@ -1,7 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/BottomNavigationBar.dart';
+import 'package:clothme/UI/BottomNavigationBar.dart';
 
 
 class Payment extends StatefulWidget {
@@ -18,7 +17,7 @@ class _PaymentState extends State<Payment> {
   /// Navigation to route after user success payment
   void navigator() {
     Navigator.of(context).pushReplacement(PageRouteBuilder(
-        pageBuilder: (_, __, ___) => new bottomNavigationBar()));
+        pageBuilder: (_, __, ___) => new BottomNavigation()));
   }
 
   @override

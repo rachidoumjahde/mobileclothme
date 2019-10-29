@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:shimmer/shimmer.dart';
-import 'package:treva_shop_flutter/Library/carousel_pro/carousel_pro.dart';
+import 'package:clothme/Library/carousel_pro/src/carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/ListItem/CategoryItem.dart';
-import 'package:treva_shop_flutter/UI/product/PromotionDetail.dart';
-import 'package:treva_shop_flutter/UI/searchd/Search.dart';
+import 'package:clothme/ListItem/CategoryItem.dart';
+import 'package:clothme/UI/product/PromotionDetail.dart';
+import 'package:clothme/UI/searchd/Search.dart';
 
 class categoryDetail extends StatefulWidget {
   @override

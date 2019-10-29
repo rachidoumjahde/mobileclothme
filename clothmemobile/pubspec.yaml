@@ -1,5 +1,5 @@
-name: treva_shop_flutter
-description: A new Flutter project.
+name: clothme
+description: A fashion application.
 
 
 version: 1.0.0+1
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-#  redux_logging: ^0.1.4
+  redux_logging: ^0.3.0
   redux: ^3.0.0
   flutter_redux: ^0.5.3
   intl: any
@@ -18,6 +18,8 @@ dependencies:
   reselect: ^0.4.0
   key_value_store: ^1.0.0
   kt_dart: ^0.5.0
+  amazon_cognito_identity_dart: ^0.0.22
+  fluro: "^1.5.1"
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

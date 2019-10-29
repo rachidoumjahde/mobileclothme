@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/Models/page_view_model.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/intro_views_flutter.dart';
-
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/Models/page_view_model.dart';
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/intro_views_flutter.dart';
 import '../signin/Login.dart';
 
 
@@ -36,11 +35,16 @@ final pages = [
       title: Text(
         'E-Commerce App',style: _fontHeaderStyle,
       ),
-      body: Container(
-        height: 250.0,
-        child: Text(
-          'You only see fashion pieces that fits \nSo You focus on your style',textAlign: TextAlign.center,
-          style: _fontDescriptionStyle
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 250.0,
+            child: Text(
+              'You only see fashion pieces that fits \nSo You focus on your style',textAlign: TextAlign.center,
+              style: _fontDescriptionStyle
+            ),
+          ),
         ),
       ),
       mainImage: Image.asset(
@@ -57,11 +61,16 @@ final pages = [
       title: Text(
         'Choose Item',style: _fontHeaderStyle,
       ),
-      body: Container(
-        height: 250.0,
-        child: Text(
-            'Choose Items wherever you are with this application to make life easier',textAlign: TextAlign.center,
-            style: _fontDescriptionStyle
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 250.0,
+            child: Text(
+                'Choose Items wherever you are with this application to make life easier',textAlign: TextAlign.center,
+                style: _fontDescriptionStyle
+            ),
+          ),
         ),
       ),
       mainImage: Image.asset(
@@ -78,11 +87,16 @@ final pages = [
       title: Text(
         'Buy Item',style: _fontHeaderStyle,
       ),
-      body: Container(
-        height: 250.0,
-        child: Text(
-            'Shop from thousand brands in the world \n in one application at throwaway \nprices ',textAlign: TextAlign.center,
-            style: _fontDescriptionStyle
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 250.0,
+            child: Text(
+                'Shop from thousand brands in the world \n in one application at throwaway \nprices ',textAlign: TextAlign.center,
+                style: _fontDescriptionStyle
+            ),
+          ),
         ),
       ),
       mainImage: Image.asset(
@@ -110,7 +124,7 @@ class _OnBoardingState extends State<OnBoarding> {
             child: widget,
           );
         },
-        transitionDuration: Duration(milliseconds: 1500),
+        transitionDuration: Duration(milliseconds: 500),
         ));
       },
     );

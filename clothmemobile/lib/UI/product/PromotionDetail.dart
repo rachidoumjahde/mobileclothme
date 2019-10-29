@@ -1,8 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:treva_shop_flutter/ListItem/PromotionData.dart';
+import 'package:clothme/ListItem/PromotionData.dart';
+
 
 class promoDetail extends StatefulWidget {
   @override

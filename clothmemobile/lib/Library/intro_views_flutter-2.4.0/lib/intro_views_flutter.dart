@@ -3,16 +3,17 @@ library intro_views_flutter;
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/Animation_Gesture/animated_page_dragger.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/Animation_Gesture/page_dragger.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/Animation_Gesture/page_reveal.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/Constants/constants.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/Models/page_view_model.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/Models/pager_indicator_view_model.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/Models/slide_update_model.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/UI/page.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/UI/page_indicator_buttons.dart';
-import 'package:treva_shop_flutter/Library/intro_views_flutter-2.4.0/lib/UI/pager_indicator.dart';
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/Animation_Gesture/animated_page_dragger.dart';
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/Animation_Gesture/page_dragger.dart';
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/Animation_Gesture/page_reveal.dart';
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/Constants/constants.dart';
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/Models/page_view_model.dart';
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/Models/pager_indicator_view_model.dart';
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/Models/slide_update_model.dart';
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/UI/page.dart';
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/UI/page_indicator_buttons.dart';
+import 'package:clothme/Library/intro_views_flutter-2.4.0/lib/UI/pager_indicator.dart';
+
 
 /// This is the IntroViewsFlutter widget of app which is a stateful widget as its state is dynamic and updates asynchronously.
 class IntroViewsFlutter extends StatefulWidget {
@@ -24,7 +25,7 @@ class IntroViewsFlutter extends StatefulWidget {
 
   /// set the Text Color for skip, done buttons
   ///
-  /// gets overiden by [pageButtonTextStyles]
+  /// gets override by [pageButtonTextStyles]
   final Color pageButtonsColor;
 
   /// Whether you want to show the skip button or not.

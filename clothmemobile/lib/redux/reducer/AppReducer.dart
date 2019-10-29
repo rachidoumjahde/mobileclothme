@@ -1,5 +1,4 @@
-
-import 'package:treva_shop_flutter/redux/store/AppState.dart';
+import 'package:clothme/redux/store/AppState.dart';
 
 AppState appReducer(AppState state, dynamic ction) {
   return new AppState(

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:treva_shop_flutter/UI/brand/BrandLayout.dart';
-import 'package:treva_shop_flutter/UI/profile/Profile.dart';
-import 'package:treva_shop_flutter/UI/search/Search.dart';
+import 'brand/BrandLayout.dart';
 import 'fit/FitHome.dart';
+import 'profile/Profile.dart';
+import 'search/Search.dart';
 
 
-class bottomNavigationBar extends StatefulWidget {
+class BottomNavigation extends StatefulWidget {
   @override
-  _bottomNavigationBarState createState() => _bottomNavigationBarState();
+  _BottomNavigationBarState createState() => _BottomNavigationBarState();
 }
 
-class _bottomNavigationBarState extends State<bottomNavigationBar> {
+class _BottomNavigationBarState extends State<BottomNavigation> {
   int currentIndex = 0;
 
   /// Set a type current number a layout class

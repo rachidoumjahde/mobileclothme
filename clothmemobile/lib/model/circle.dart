@@ -1,5 +1,5 @@
 import 'package:kt_dart/collection.dart';
-import 'package:treva_shop_flutter/model/user.dart';
+import 'package:clothme/model/user.dart';
 
 
 class Circle {
