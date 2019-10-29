@@ -5,7 +5,6 @@ import 'package:clothme/common/widget/text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-
 class SignUpForm extends StatefulWidget {
   @override
   _SignUpFormState createState() => _SignUpFormState();
@@ -29,14 +28,14 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
   @override
   void initState() {
     sAnimationController =
-    AnimationController(vsync: this, duration: Duration(milliseconds: 400))
-      ..addStatusListener((status) {
-        if (status == AnimationStatus.dismissed) {
-          setState(() {
-            tap = 0;
+        AnimationController(vsync: this, duration: Duration(milliseconds: 400))
+          ..addStatusListener((status) {
+            if (status == AnimationStatus.dismissed) {
+              setState(() {
+                tap = 0;
+              });
+            }
           });
-        }
-      });
     // TODO: implement initState
     super.initState();
   }
@@ -79,6 +78,7 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
                     // name and logo widget
                     const NameLogoWidget(name: "Clothme"),
                     Padding(padding: EdgeInsets.symmetric(vertical: 70.0)),
+
                     /// TextFromField Email
                     TextFieldInput(
                       icon: Icons.person,
@@ -94,6 +94,7 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
                       keyboardInputType: TextInputType.emailAddress,
                     ),
                     Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
+
                     /// TextFromField Password
                     TextFieldInput(
                       icon: Icons.vpn_key,
@@ -101,6 +102,17 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
                       type: "Password",
                       keyboardInputType: TextInputType.text,
                     ),
+
+                    Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
+
+                    /// TextFromField Password
+                    TextFieldInput(
+                      icon: Icons.map,
+                      textHide: false,
+                      type: "City",
+                      keyboardInputType: TextInputType.text,
+                    ),
+
                     /// Button Login
                     FlatButton(
                       padding: EdgeInsets.only(top: 20.0),
@@ -121,7 +133,28 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
                     Padding(
                       padding: EdgeInsets.only(
                           top: mediaQueryData.padding.top + 40.0, bottom: 0.0),
-                    )
+                    ),
+                    RaisedButton(
+                      child: Text(
+                        "Sign Up",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: "Sans"
+                        ),
+                      ),
+                      onPressed: () {
+                        // Validate returns true if the form is valid, otherwise false.
+                        if (_formKey.currentState.validate()) {
+                          // If the form is valid, display a snackbar. In the real world,
+                          // you'd often call a server or save the information in a database.
+                          Scaffold
+                              .of(context)
+                              .showSnackBar(SnackBar(content: Text('Processing Data')));
+                        }
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -130,19 +163,19 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
         ),
 
         /// Set Animation after user click buttonLogin
-        tap == 0
-            ? InkWell(
-                splashColor: Colors.yellow,
-                onTap: () {
-                  setState(() {tap = 1;});
-                  _playAnimation();
-                  return tap;
-                },
-                child: RaisedButton(onPressed: null),
-              )
-            : new LoginAnimation(
-                animationController: sAnimationController.view,
-              )
+//        tap == 0
+//            ? InkWell(
+//                splashColor: Colors.black,
+//                onTap: () {
+//                  setState(() {tap = 1;});
+//                  _playAnimation();
+//                  return tap;
+//                },
+//                child: RaisedButton(onPressed: null),
+//              )
+//            : new LoginAnimation(
+//                animationController: sAnimationController.view,
+//              )
       ],
     );
   }

@@ -19,6 +19,15 @@ class MyThemes {
           fontWeight: FontWeight.bold,
           fontSize: 16.0
       ),
+      body2: TextStyle(),
+      subhead: TextStyle(),
+      display1: TextStyle(),
+      display2: TextStyle(),
+      display3: TextStyle(),
+      display4: TextStyle(),
+      button: TextStyle(),
+      subtitle: TextStyle(),
+      caption: TextStyle()
     ),
   );
 
@@ -36,6 +45,15 @@ class MyThemes {
       ),
       body1: TextStyle(
       ),
+      body2: TextStyle(),
+      subhead: TextStyle(),
+      display1: TextStyle(),
+      display2: TextStyle(),
+      display3: TextStyle(),
+      display4: TextStyle(),
+      button: TextStyle(),
+      subtitle: TextStyle(),
+      caption: TextStyle(),
     ),
   );
 
@@ -53,6 +71,15 @@ class MyThemes {
       ),
       body1: TextStyle(
       ),
+      body2: TextStyle(),
+      subhead: TextStyle(),
+      display1: TextStyle(),
+      display2: TextStyle(),
+      display3: TextStyle(),
+      display4: TextStyle(),
+      button: TextStyle(),
+      subtitle: TextStyle(),
+      caption: TextStyle()
     ),
   );
 

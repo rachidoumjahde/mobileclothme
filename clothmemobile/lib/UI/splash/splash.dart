@@ -32,8 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Padding(
+      body: Padding(
           padding: const EdgeInsets.all(0.0),
           child: Container(
             /// Set Background image in splash screen layout (Click to open code)
@@ -60,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           padding: EdgeInsets.only(top: 30.0),
                         ),
                         /// Animation text ClothME to choose Login with Hero Animation (Click to open code)
-                        const WelcomeMessageWidget(welcomeText: "Welocime to", brandName: "Clothme")
+                        const WelcomeMessageWidget(welcomeText: "Welcome to", brandName: "Clothme")
                       ],
                     ),
                   ),
@@ -69,7 +68,6 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
         ),
-      ),
     );
   }
 }

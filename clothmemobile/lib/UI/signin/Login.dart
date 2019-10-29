@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:clothme/UI/signin/widget/signin_form.dart';
 import 'package:clothme/common/widget/text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:clothme/UI/signup/Signup.dart';
@@ -55,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen>
   @override
   Widget build(BuildContext context) {
     MediaQueryData mediaQueryData = MediaQuery.of(context);
-    mediaQueryData.devicePixelRatio;
+//    mediaQueryData.devicePixelRatio;
     mediaQueryData.size.width;
     mediaQueryData.size.height;
     return Scaffold(
@@ -85,126 +86,11 @@ class _LoginScreenState extends State<LoginScreen>
               Stack(
                 alignment: AlignmentDirectional.bottomCenter,
                 children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      Container(
-                        alignment: AlignmentDirectional.topCenter,
-                        child: Column(
-                          children: <Widget>[
-                            /// padding logo
-                            Padding(
-                                padding: EdgeInsets.only(
-                                    top: mediaQueryData.padding.top + 60.0)),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-//                                Image(
-//                                  image: AssetImage("assets/img/Logo.png"),
-//                                  height: 70.0,
-//                                ),
-                                Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: 0.0)),
-
-                                /// Animation text treva shop accept from signup layout (Click to open code)
-                                Hero(
-                                  tag: "login_tag",
-                                  child: Text(
-                                    "ClothME",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w900,
-                                        letterSpacing: 0.6,
-                                        color: Colors.white,
-                                        fontFamily: "Sans",
-                                        fontSize: 26.0),
-                                  ),
-                                ),
-                              ],
-                            ),
-
-                            Padding(
-                                padding: EdgeInsets.symmetric(vertical: 30.0)),
-
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-
-                                /// ButtonCustomFacebook
-                                Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 30.0)),
-                                ButtonCustomFacebook(),
-
-                                /// ButtonCustomGoogle
-                                Padding(
-                                    padding: EdgeInsets.symmetric(vertical: 7.0)),
-                                ButtonCustomGoogle(),
-                              ],
-                            ),
-
-                            /// Set Text
-                            Padding(
-                                padding: EdgeInsets.symmetric(vertical: 10.0)),
-                            Text(
-                              "OR",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                  letterSpacing: 0.2,
-                                  fontFamily: 'Sans',
-                                  fontSize: 17.0),
-                            ),
-
-                            /// TextFromField Email
-                            Padding(
-                                padding: EdgeInsets.symmetric(vertical: 10.0)),
-                            TextFieldInput(
-                              icon: Icons.email,
-                              textHide: false,
-                              type: "Email",
-                              keyboardInputType: TextInputType.emailAddress,
-                            ),
-
-                            /// TextFromField Password
-                            Padding(
-                                padding: EdgeInsets.symmetric(vertical: 10.0)),
-                            TextFieldInput(
-                              icon: Icons.vpn_key,
-                              textHide: true,
-                              type: "Password",
-                              keyboardInputType: TextInputType.text,
-                            ),
-
-                            /// Button Signup
-                            FlatButton(
-                                padding: EdgeInsets.only(top: 20.0),
-                                onPressed: () {
-                                  Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              new SignUp()));
-                                },
-                                child: Text(
-                                  "Not Have Acount? Sign Up",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 13.0,
-                                      fontWeight: FontWeight.w600,
-                                      fontFamily: "Sans"),
-                                )),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  top: mediaQueryData.padding.top + 100.0,
-                                  bottom: 0.0),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                  SignInForm(),
                   /// Set Animaion after user click buttonLogin
                   tap == 0
                       ? InkWell(
-                          splashColor: Colors.yellow,
+                          splashColor: Colors.black,
                           onTap: () {
                             setState(() {
                               tap = 1;
@@ -230,54 +116,6 @@ class _LoginScreenState extends State<LoginScreen>
   }
 }
 
-/// textfromfield custom class
-class TextFromField extends StatelessWidget {
-  bool password;
-  String email;
-  IconData icon;
-  TextInputType inputType;
-
-  TextFromField({this.email, this.icon, this.inputType, this.password});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30.0),
-      child: Container(
-        height: 60.0,
-        alignment: AlignmentDirectional.center,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14.0),
-            color: Colors.white,
-            boxShadow: [BoxShadow(blurRadius: 10.0, color: Colors.black12)]),
-        padding:
-            EdgeInsets.only(left: 20.0, right: 30.0, top: 0.0, bottom: 0.0),
-        child: Theme(
-          data: ThemeData(
-            hintColor: Colors.transparent,
-          ),
-          child: TextFormField(
-            obscureText: password,
-            decoration: InputDecoration(
-                border: InputBorder.none,
-                labelText: email,
-                icon: Icon(
-                  icon,
-                  color: Colors.black38,
-                ),
-                labelStyle: TextStyle(
-                    fontSize: 15.0,
-                    fontFamily: 'Sans',
-                    letterSpacing: 0.3,
-                    color: Colors.black38,
-                    fontWeight: FontWeight.w600)),
-            keyboardType: inputType,
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 ///buttonCustomFacebook class
 class ButtonCustomFacebook extends StatelessWidget {
@@ -301,15 +139,6 @@ class ButtonCustomFacebook extends StatelessWidget {
               "assets/img/icon_facebook.png",
               height: 25.0,
             ),
-//            Padding(padding: EdgeInsets.symmetric(horizontal: 7.0)),
-//            Text(
-//              "Login With Facebook",
-//              style: TextStyle(
-//                  color: Colors.white,
-//                  fontSize: 15.0,
-//                  fontWeight: FontWeight.w500,
-//                  fontFamily: 'Sans'),
-//            ),
           ],
         ),
       ),
@@ -339,15 +168,6 @@ class ButtonCustomGoogle extends StatelessWidget {
               "assets/img/google.png",
               height: 25.0,
             ),
-//            Padding(padding: EdgeInsets.symmetric(horizontal: 7.0)),
-//            Text(
-//              "Login With Google",
-//              style: TextStyle(
-//                  color: Colors.black26,
-//                  fontSize: 15.0,
-//                  fontWeight: FontWeight.w500,
-//                  fontFamily: 'Sans'),
-//            )
           ],
         ),
       ),
