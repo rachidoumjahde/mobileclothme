@@ -1,4 +1,4 @@
-import 'package:clothme/UI/signin/Login.dart';
+import 'package:clothme/UI/signin/SignIn.dart';
 import 'package:clothme/UI/signin/LoginAnimation.dart';
 import 'package:clothme/UI/signup/widget/name_logo.dart';
 import 'package:clothme/common/widget/text_form_field.dart';
@@ -127,7 +127,7 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
                       onPressed: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                new LoginScreen()));
+                                new SignInView()));
                       },
                     ),
                     Padding(

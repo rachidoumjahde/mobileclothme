@@ -1,4 +1,4 @@
-import 'package:clothme/UI/signin/Login.dart';
+import 'package:clothme/UI/signin/SignIn.dart';
 import 'package:clothme/UI/signin/LoginAnimation.dart';
 import 'package:clothme/UI/signup/Signup.dart';
 import 'package:clothme/UI/signup/widget/name_logo.dart';

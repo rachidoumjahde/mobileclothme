@@ -1,137 +1,141 @@
+import 'package:clothme/scopedModel/model/fit_model/fit_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:clothme/UI/fit/widget/brandDetails.dart';
 import 'package:clothme/UI/notification/Notification.dart';
 import 'package:clothme/UI/cart/CartLayout.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 
 class FitHome extends StatelessWidget {
   // Make this specific to ios or android
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: AppBar(
-          backgroundColor: new Color(0xfff8faf8),
-          centerTitle: true,
-          elevation: 2.0,
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            tooltip: 'Navigation Menu',
-            onPressed: null,
-          ),
-          title: Text(
-            "My Sizes",
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 20.0,
-                color: Colors.black54,
-                fontFamily: "Roboto"),
-          ),
-          actions: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(right: 12.0),
-              child: IconButton(
-                  icon: Icon(Icons.shopping_cart),
-                  // ignore: sdk_version_set_literal
-                  onPressed: () => {_navigateCart(context)}),
+    return ScopedModel<FitModel>(
+      child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: new Color(0xfff8faf8),
+            centerTitle: true,
+            elevation: 2.0,
+            leading: IconButton(
+              icon: Icon(Icons.menu),
+              tooltip: 'Navigation Menu',
+              onPressed: null,
             ),
-            Padding(
+            title: Text(
+              "My Sizes",
+              style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 20.0,
+                  color: Colors.black54,
+                  fontFamily: "Roboto"),
+            ),
+            actions: <Widget>[
+              Padding(
                 padding: const EdgeInsets.only(right: 12.0),
                 child: IconButton(
-                  icon: Icon(Icons.notifications),
-                  onPressed: () => {_navigateNotification(context)},
-                ))
-          ],
-        ),
-        body: Row(
-          children: <Widget>[
-            Expanded(
-              child: SizedBox(
-                  child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, index) => Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Divider(),
-                    BrandDetails(),
-                    Divider(),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10.0, 8.0, 4.0, 8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Row(children: <Widget>[
-                            Container(
-                              height: 20.0,
-                              child: Text(
-                                "99% Fit For Paul Ikhane, Get it Now for 30% OFF",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16.0),
-                              ),
-                            )
-                          ]),
-                        ],
-                      ),
-                    ),
-                    Flexible(
-                      fit: FlexFit.loose,
-                      child: Image.network(
-                        "https://images.pexels.com/photos/672657/pexels-photo-672657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(10.0, 6.0, 0.0, 4.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              IconButton(
-                                icon: Icon(FontAwesomeIcons.heart),
-                                onPressed: () =>
-                                    {_navigateNotification(context)},
-                              ),
-                              SizedBox(
-                                width: 16.0,
-                              ),
-                              // Add some information about the fit here
-                              IconButton(
-                                icon: Icon(FontAwesomeIcons.comment),
-                                onPressed: () =>
-                                    {_navigateNotification(context)},
-                              ),
-                              SizedBox(
-                                width: 180.0,
-                              ),
-                              Container(
-                                  child: InkWell(
-                                    onTap: () {},
-                                    child: ButtonBuy(),
-                              ))
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: Text(
-                        "Liked by paulikhane, maggie and 528,331 others",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                ),
-              )
+                    icon: Icon(Icons.shopping_cart),
+                    // ignore: sdk_version_set_literal
+                    onPressed: () => {_navigateCart(context)}),
               ),
-            ),
-          ],
-        )
+              Padding(
+                  padding: const EdgeInsets.only(right: 12.0),
+                  child: IconButton(
+                    icon: Icon(Icons.notifications),
+                    onPressed: () => {_navigateNotification(context)},
+                  ))
+            ],
+          ),
+          body: Row(
+            children: <Widget>[
+              Expanded(
+                child: SizedBox(
+                    child: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index) => Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Divider(),
+                      BrandDetails(),
+                      Divider(),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(10.0, 8.0, 4.0, 8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Row(children: <Widget>[
+                              Container(
+                                height: 20.0,
+                                child: Text(
+                                  "99% Fit For Paul Ikhane, Get it Now for 30% OFF",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16.0),
+                                ),
+                              )
+                            ]),
+                          ],
+                        ),
+                      ),
+                      Flexible(
+                        fit: FlexFit.loose,
+                        child: Image.network(
+                          "https://images.pexels.com/photos/672657/pexels-photo-672657.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(10.0, 6.0, 0.0, 4.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                IconButton(
+                                  icon: Icon(FontAwesomeIcons.heart),
+                                  onPressed: () =>
+                                      {_navigateNotification(context)},
+                                ),
+                                SizedBox(
+                                  width: 16.0,
+                                ),
+                                // Add some information about the fit here
+                                IconButton(
+                                  icon: Icon(FontAwesomeIcons.comment),
+                                  onPressed: () =>
+                                      {_navigateNotification(context)},
+                                ),
+                                SizedBox(
+                                  width: 180.0,
+                                ),
+                                Container(
+                                    child: InkWell(
+                                      onTap: () {},
+                                      child: ButtonBuy(),
+                                ))
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Text(
+                          "Liked by paulikhane, maggie and 528,331 others",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+                ),
+              ),
+            ],
+          )
+      ),
     );
   }
 }

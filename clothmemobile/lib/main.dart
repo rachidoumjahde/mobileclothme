@@ -1,3 +1,4 @@
+import 'package:clothme/scopedModel/service_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:redux/redux.dart'; // new
@@ -11,14 +12,14 @@ import 'UI/splash/splash.dart';
 import 'redux/reducer/AppReducer.dart';
 import 'redux/store/AppState.dart';
 
-
 /// Run first apps wrapped in CustomTheme
-void main() => runApp(
-    CustomTheme(
-      initialThemeKey: MyThemeKeys.LIGHT,
-      child: MyApp(),
-    )
-);
+void main() {
+  setupLocator();
+  runApp(CustomTheme(
+    initialThemeKey: MyThemeKeys.LIGHT,
+    child: MyApp(),
+  ));
+}
 
 /// Set orientation
 class MyApp extends StatelessWidget {

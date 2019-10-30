@@ -8,12 +8,12 @@ import 'package:clothme/UI/signup/Signup.dart';
 import 'LoginAnimation.dart';
 
 
-class LoginScreen extends StatefulWidget {
+class SignInView extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignInViewState createState() => _SignInViewState();
 }
 /// Component Widget this layout UI
-class _LoginScreenState extends State<LoginScreen>
+class _SignInViewState extends State<SignInView>
     with TickerProviderStateMixin {
   //Animation Declaration
   AnimationController sanimationController;
