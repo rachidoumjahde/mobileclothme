@@ -86,6 +86,17 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
                       type: "First Name",
                       keyboardInputType: TextInputType.emailAddress,
                     ),
+
+                    Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
+
+                    /// TextFromField Password
+                    TextFieldInput(
+                      icon: Icons.map,
+                      textHide: false,
+                      type: "City",
+                      keyboardInputType: TextInputType.text,
+                    ),
+
                     Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
                     TextFieldInput(
                       icon: Icons.email,
@@ -103,15 +114,7 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
                       keyboardInputType: TextInputType.text,
                     ),
 
-                    Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
 
-                    /// TextFromField Password
-                    TextFieldInput(
-                      icon: Icons.map,
-                      textHide: false,
-                      type: "City",
-                      keyboardInputType: TextInputType.text,
-                    ),
 
                     /// Button Login
                     FlatButton(
