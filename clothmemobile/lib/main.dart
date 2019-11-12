@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'Theme/custom_theme.dart';
 import 'Theme/themes.dart';
 import 'UI/onboarding/OnBoarding.dart';
-import 'UI/splash/splash.dart';
+import 'core/navigation/router.dart';
 
 /// Run first apps wrapped in CustomTheme
 void main() {
@@ -13,6 +13,7 @@ void main() {
   runApp(CustomTheme(
     initialThemeKey: MyThemeKeys.LIGHT,
     child: MyApp(),
+
   ));
 }
 
@@ -40,7 +41,8 @@ class MyApp extends StatelessWidget {
               primaryColorBrightness: Brightness.light,
               primaryColor: Colors.white),
           debugShowCheckedModeBanner: false,
-          home: SplashScreen(),
+          initialRoute: 'splashScreen',
+          onGenerateRoute: Router.generateRoute,
 
           /// Move splash screen to ChoseLogin Layout
           /// Routes

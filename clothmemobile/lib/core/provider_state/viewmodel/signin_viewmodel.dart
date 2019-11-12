@@ -12,5 +12,11 @@ class SignInViewModel extends BaseModel {
 
     // Not a number
 
+//    var success = await _authenticationService.login(userId);
+
+    // Handle potential error here too.
+
+    setState(ViewState.Idle);
+//    return success;
   }
 }
