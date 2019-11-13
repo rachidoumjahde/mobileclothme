@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:ffi';
 import 'package:clothme/core/provider_state/model/forgot_password/forgot_password_model.dart';
 import 'package:clothme/core/provider_state/model/reset_password/reset_password_model.dart';
@@ -10,49 +11,62 @@ import '../api_service.dart';
 
 
 class AuthenticationService {
-  var client = new http.Client();
   var endpoint = Api.endpoint;
 
   StreamController<UserModel> userController = StreamController<UserModel>();
 
+  // SIGN UP
   Future<SignUpModel> signUpWithEmail(SignUpModel signUpModel) async {
-
+    var response = await http.post('$endpoint/auth/signup', body: signUpModel);
+    // Convert and return
+    return SignUpModel.fromJson(json.decode(response.body));
   }
 
-  Future<SignUpModel> signUpWithFacebook(SignUpModel signUpModel) async {
-
+  Future<SignUpModel> signUpWithFacebook() async {
+    // call google app to obtain token
+    var token = '';
+    // use token to call endpoint
+    var response = await http.post('$endpoint/mobile-auth/signup/facebook', body: token);
+    // Convert and return
+    return SignUpModel.fromJson(json.decode(response.body));
   }
 
-  Future<SignUpModel> signUpWithGoogle(SignUpModel signUpModel) async {
-
+  Future<SignUpModel> signUpWithGoogle() async {
+    // call google app to obtain token
+    var token = '';
+    // use token to call endpoint
+    var response = await http.post('$endpoint/mobile-auth/signup/google', body: token);
+    // Convert and return
+    return SignUpModel.fromJson(json.decode(response.body));
   }
 
-  Future<SignInModel> signIn(SignInModel signInModel) async {
-
+  // SIGN IN
+  Future<UserModel> signIn(SignInModel signInModel) async {
+    var response = await http.post('$endpoint/mobile-auth/signin', body: signInModel);
+    var user = UserModel.fromJson(json.decode(response.body));
+    // add user to stream
+    userController.add(user);
+    // return user
+    return user;
   }
 
-  Future<Void> signOut() async {
-
+  Future<http.Response> signOut() async {
+    var response = await http.post('$endpoint/mobile-auth/signout');
+    // return response
+    return response;
   }
 
   Future<ResetPasswordModel> resetPassword(ResetPasswordModel resetPasswordModel) async {
-
+    var response = await http.post('$endpoint/mobile-auth/resetpassword', body: resetPasswordModel);
+    var user = ResetPasswordModel.fromJson(json.decode(response.body));
+    // return user
+    return user;
   }
 
   Future<ForgotPasswordModel> forgotPassword(ForgotPasswordModel forgotPasswordModel) async {
-
+    var response = await http.post('$endpoint/mobile-auth/forgotpassword', body: forgotPasswordModel);
+    var user = ForgotPasswordModel.fromJson(json.decode(response.body));
+    // return user
+    return user;
   }
-
-//  StreamController<User> userController = StreamController<User>();
-//
-//  Future<bool> login(int userId) async {
-//    var fetchedUser = await _api.getUserProfile(userId);
-//
-//    var hasUser = fetchedUser != null;
-//    if(hasUser) {
-//      userController.add(fetchedUser);
-//    }
-//
-//    return hasUser;
-//  }
 }

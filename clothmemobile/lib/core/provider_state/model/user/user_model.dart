@@ -5,9 +5,9 @@ class UserModel {
   String firstName;
   String lastName;
   String dateOfBirth;
-  Gender gender;
+  String gender;
   List<Address> address;
-  Profession profession;
+  String profession;
   String headLine;
   String avatarUrl;
 
@@ -32,6 +32,7 @@ class UserModel {
               id == other.id &&
               firstName == other.firstName &&
               lastName == other.lastName &&
+              address == other.address &&
               dateOfBirth == other.dateOfBirth &&
               gender == other.gender &&
               profession == other.profession &&
@@ -44,10 +45,48 @@ class UserModel {
       firstName.hashCode ^
       lastName.hashCode ^
       dateOfBirth.hashCode ^
+      address.hashCode ^
       gender.hashCode ^
       profession.hashCode ^
       headLine.hashCode ^
       avatarUrl.hashCode;
+
+  UserModel.initial()
+      : id = '',
+        firstName = '',
+        lastName = '',
+        dateOfBirth = '',
+        gender = '',
+        address = [],
+        profession = '',
+        headLine = '',
+        avatarUrl = '';
+
+  UserModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    firstName = json['name'];
+    lastName = json['lastName'];
+    dateOfBirth = json['dateOfBirth'];
+    address = json['address'];
+    gender = json['gender'];
+    profession = json['profession'];
+    headLine = json['headLine'];
+    avatarUrl = json['avatarUrl'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['firstName'] = this.firstName;
+    data['lastName'] = this.lastName;
+    data['dateOfBirth'] = this.dateOfBirth;
+    data['address'] = this.address;
+    data['gender'] = this.gender;
+    data['profession'] = this.profession;
+    data['headLine'] = this.headLine;
+    data['avatarUrl'] = this.avatarUrl;
+    return data;
+  }
 }
 
 

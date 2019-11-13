@@ -9,6 +9,7 @@ import 'package:clothme/core/provider_state/model/discover/discover_model.dart';
 import 'package:clothme/core/provider_state/model/signin/signin_model.dart';
 import 'package:clothme/core/provider_state/model/signup/signup_model.dart';
 import 'package:clothme/core/service/api_service.dart';
+import 'package:clothme/core/service/auth/authentication_service.dart';
 import 'package:clothme/core/service/fit/fit_service.dart';
 import 'package:get_it/get_it.dart';
 
@@ -16,8 +17,10 @@ GetIt locator = GetIt.instance;
 
 void setupLocator() {
   // Register services
-  locator.registerLazySingleton(() => FitService());
   locator.registerLazySingleton(() => Api());
+  locator.registerLazySingleton(() => AuthenticationService());
+  locator.registerLazySingleton(() => FitService());
+
 
 
   // Register models
