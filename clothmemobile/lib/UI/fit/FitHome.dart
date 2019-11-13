@@ -9,7 +9,7 @@ class FitHome extends StatelessWidget {
   // Make this specific to ios or android
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
         appBar: AppBar(
           backgroundColor: new Color(0xfff8faf8),
           centerTitle: true,

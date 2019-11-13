@@ -1,4 +1,4 @@
-import 'package:clothme/UI/signin/Login.dart';
+import 'package:clothme/UI/signin/SignIn.dart';
 import 'package:clothme/UI/signin/LoginAnimation.dart';
 import 'package:clothme/UI/signup/widget/name_logo.dart';
 import 'package:clothme/common/widget/text_form_field.dart';
@@ -86,6 +86,17 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
                       type: "First Name",
                       keyboardInputType: TextInputType.emailAddress,
                     ),
+
+                    Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
+
+                    /// TextFromField Password
+                    TextFieldInput(
+                      icon: Icons.map,
+                      textHide: false,
+                      type: "City",
+                      keyboardInputType: TextInputType.text,
+                    ),
+
                     Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
                     TextFieldInput(
                       icon: Icons.email,
@@ -103,15 +114,7 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
                       keyboardInputType: TextInputType.text,
                     ),
 
-                    Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
 
-                    /// TextFromField Password
-                    TextFieldInput(
-                      icon: Icons.map,
-                      textHide: false,
-                      type: "City",
-                      keyboardInputType: TextInputType.text,
-                    ),
 
                     /// Button Login
                     FlatButton(
@@ -127,7 +130,7 @@ class _SignUpFormState extends State<SignUpForm> with TickerProviderStateMixin {
                       onPressed: () {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                new LoginScreen()));
+                                new SignInView()));
                       },
                     ),
                     Padding(

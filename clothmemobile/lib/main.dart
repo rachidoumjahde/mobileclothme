@@ -1,35 +1,24 @@
+import 'package:clothme/core/provider_state/locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:redux/redux.dart'; // new
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:clothme/redux/reducer/AppReducer.dart';
 
 import 'Theme/custom_theme.dart';
 import 'Theme/themes.dart';
 import 'UI/onboarding/OnBoarding.dart';
-import 'UI/splash/splash.dart';
-import 'redux/reducer/AppReducer.dart';
-import 'redux/store/AppState.dart';
-
+import 'core/navigation/router.dart';
 
 /// Run first apps wrapped in CustomTheme
-void main() => runApp(
-    CustomTheme(
-      initialThemeKey: MyThemeKeys.LIGHT,
-      child: MyApp(),
-    )
-);
+void main() {
+  setupLocator();
+  runApp(CustomTheme(
+    initialThemeKey: MyThemeKeys.LIGHT,
+    child: MyApp(),
+
+  ));
+}
 
 /// Set orientation
 class MyApp extends StatelessWidget {
-  // Store is just a class that holds your apps State tree.
-  // AppState is something that we will (but haven't yet) established
-  final store = new Store<AppState>(
-    appReducer,
-    initialState: new AppState(),
-    middleware: [],
-  );
-
   @override
   Widget build(BuildContext context) {
     /// To set orientation always portrait
@@ -42,9 +31,7 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
       statusBarColor: Colors.transparent, //or set color with: Color(0xFF0000FF)
     ));
-    return new StoreProvider(
-        store: store,
-        child: MaterialApp(
+    return MaterialApp(
           title: "ClothME",
           //theme: CustomTheme.of(context),
           theme: ThemeData(
@@ -54,13 +41,14 @@ class MyApp extends StatelessWidget {
               primaryColorBrightness: Brightness.light,
               primaryColor: Colors.white),
           debugShowCheckedModeBanner: false,
-          home: SplashScreen(),
+          initialRoute: 'splashScreen',
+          onGenerateRoute: Router.generateRoute,
 
           /// Move splash screen to ChoseLogin Layout
           /// Routes
           routes: <String, WidgetBuilder>{
             "login": (BuildContext context) => OnBoarding(),
           },
-        ));
+        );
   }
 }

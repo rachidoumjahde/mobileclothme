@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:clothme/UI/signup/widget/signup_form.dart';
 import 'package:flutter/material.dart';
-import 'package:clothme/UI/signin/Login.dart';
+import 'package:clothme/UI/signin/SignIn.dart';
 import 'package:clothme/UI/signin/LoginAnimation.dart';
 import 'package:clothme/common/widget/text_form_field.dart';
 
