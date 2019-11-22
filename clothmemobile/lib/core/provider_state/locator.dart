@@ -1,5 +1,5 @@
 import 'package:clothme/UI/fit/FitHome.dart';
-import 'package:clothme/core/provider_state/model/brand/brand_list_model.dart';
+import 'package:clothme/core/provider_state/model/brand/brand_model.dart';
 import 'package:clothme/core/provider_state/model/discover/discover_detail_model.dart';
 import 'package:clothme/core/provider_state/model/forgot_password/forgot_password_model.dart';
 import 'package:clothme/core/provider_state/model/product/product_list_model.dart';
@@ -32,7 +32,7 @@ void setupLocator() {
   locator.registerFactory(() => FitHome());
   locator.registerFactory(() => DiscoverModel());
   locator.registerFactory(() => DiscoverDetailModel());
-  locator.registerFactory(() => BrandListModel());
+  locator.registerFactory(() => BrandModel());
   locator.registerFactory(() => UserModel());
   locator.registerFactory(() => ProductModel());
   locator.registerFactory(() => ProductListModel());

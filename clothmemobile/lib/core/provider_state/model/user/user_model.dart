@@ -1,4 +1,5 @@
 import 'package:clothme/core/provider_state/model/common/address.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 class UserModel {
   String id;
@@ -10,7 +11,7 @@ class UserModel {
   String profession;
   String headLine;
   String avatarUrl;
-
+  UserFitProduct fitProduct;
 
   UserModel({
     this.id,
@@ -22,6 +23,7 @@ class UserModel {
     this.profession,
     this.headLine,
     this.avatarUrl,
+    this.fitProduct
   });
 
   @override
@@ -37,7 +39,8 @@ class UserModel {
               gender == other.gender &&
               profession == other.profession &&
               headLine == other.headLine &&
-              avatarUrl == other.avatarUrl;
+              avatarUrl == other.avatarUrl &&
+              fitProduct == other.fitProduct;
 
   @override
   int get hashCode =>
@@ -49,7 +52,8 @@ class UserModel {
       gender.hashCode ^
       profession.hashCode ^
       headLine.hashCode ^
-      avatarUrl.hashCode;
+      avatarUrl.hashCode ^
+      fitProduct.hashCode;
 
   UserModel.initial()
       : id = '',
@@ -60,7 +64,8 @@ class UserModel {
         address = [],
         profession = '',
         headLine = '',
-        avatarUrl = '';
+        avatarUrl = '',
+        fitProduct = null;
 
   UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -72,6 +77,7 @@ class UserModel {
     profession = json['profession'];
     headLine = json['headLine'];
     avatarUrl = json['avatarUrl'];
+    fitProduct = json['fitProduct'];
   }
 
   Map<String, dynamic> toJson() {
@@ -85,6 +91,7 @@ class UserModel {
     data['profession'] = this.profession;
     data['headLine'] = this.headLine;
     data['avatarUrl'] = this.avatarUrl;
+    data['fitProduct'] = this.fitProduct;
     return data;
   }
 
@@ -95,6 +102,7 @@ class UserModel {
     profession = json['profession'];
     headLine = json['headLine'];
     avatarUrl = json['avatarUrl'];
+    fitProduct = json['fitProduct'];
   }
 
   Map<String, dynamic> toJsonFit() {
@@ -105,8 +113,37 @@ class UserModel {
     data['profession'] = this.profession;
     data['headLine'] = this.headLine;
     data['avatarUrl'] = this.avatarUrl;
+    data['fitProduct'] = this.fitProduct;
     return data;
   }
+
+  factory UserModel.fromJsonFitt(Map<String, dynamic> json) {
+    return UserModel(
+      id: json['id'] as String,
+      firstName: json['title'] as String,
+      lastName: json['thumbnailUrl'] as String,
+    );
+  }
+}
+
+class UserFitProduct {
+  String productId;
+  String fitPercentage;
+
+  UserFitProduct(this.productId, this.fitPercentage);
+
+  UserFitProduct.initial()
+      : productId = '',
+        fitPercentage = '';
+
+  UserFitProduct.fromJson(Map<String, dynamic> json)
+      : productId = json['productId'],
+        fitPercentage = json['fitPercentage'];
+
+  Map<String, dynamic> toJson() => {
+      'productId': productId,
+      'fitPercentage': fitPercentage,
+  };
 }
 
 

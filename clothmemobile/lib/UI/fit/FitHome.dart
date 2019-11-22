@@ -21,7 +21,7 @@ class FitHome extends StatelessWidget {
             onPressed: null,
           ),
           title: Text(
-            "Fit",
+            "Clothme",
             style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 20.0,
