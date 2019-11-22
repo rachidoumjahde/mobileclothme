@@ -4,22 +4,21 @@ import 'package:clothme/core/provider_state/model/product/product_model.dart';
 import 'package:http/http.dart' as http;
 import '../api_service.dart';
 
-
 class ProductService {
   var endpoint = Api.endpoint;
 
-  // Get User Product by UserId
-  Future<ProductModel> getAllProduct(String userId, String authHeader) async {
+  // Get User Product by UserId for Fit ViewModel
+  Future<ProductModel> getAllProductFitViewModel(String userId, String authHeader) async {
     var response = await http.get('$endpoint/mobile-product/$userId',
         // Send authorization headers to the backend.
         headers: {HttpHeaders.authorizationHeader: authHeader});
     // Convert and return
-    var productData = ProductModel.fromJson(json.decode(response.body));
+    var productData = ProductModel.fromJsonFit(json.decode(response.body));
     return productData;
   }
 
   // Get User Products by UserId
-  Future<ProductModel> getOneProduct(String userId, String productId, String authHeader) async {
+  Future<ProductModel> getOneProductDetail(String userId, String productId, String authHeader) async {
     var response = await http.get('$endpoint/mobile-product/$userId/product/$productId',
         // Send authorization headers to the backend.
         headers: {HttpHeaders.authorizationHeader: authHeader});

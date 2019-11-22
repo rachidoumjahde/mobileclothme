@@ -7,15 +7,25 @@ import '../api_service.dart';
 
 class UserService {
   var endpoint = Api.endpoint;
-  List<UserModel> userModel;
 
-  // User Network Call
-  Future<UserModel> getUser(String userId, String authHeader) async {
+  // Get User Home Fit Data
+  Future<UserModel> getUserFitHomeData(String userId, String authHeader) async {
     var response = await http.get('$endpoint/mobile-user/$userId',
         // Send authorization headers to the backend.
         headers: {HttpHeaders.authorizationHeader: authHeader});
     // Convert
     var fitData = UserModel.fromJsonFit(json.decode(response.body));
+    // return
+    return fitData;
+  }
+
+  // Get User Discovery Data
+  Future<UserModel> getUserDiscoveryData(String userId, String authHeader) async {
+    var response = await http.get('$endpoint/mobile-user/all-user-product/$userId',
+        // Send authorization headers to the backend.
+        headers: {HttpHeaders.authorizationHeader: authHeader});
+    // Convert
+    var fitData = UserModel.fromJsonDiscovery(json.decode(response.body));
     // return
     return fitData;
   }
@@ -26,7 +36,7 @@ class UserService {
         // Send authorization headers to the backend.
         headers: {HttpHeaders.authorizationHeader: authHeader});
     // Convert
-    var fitData = UserModel.fromJsonFit(json.decode(response.body));
+    var fitData = UserModel.fromJson(json.decode(response.body));
     // return
     return fitData;
   }

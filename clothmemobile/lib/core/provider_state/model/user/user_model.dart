@@ -1,5 +1,4 @@
 import 'package:clothme/core/provider_state/model/common/address.dart';
-import 'package:json_annotation/json_annotation.dart';
 
 class UserModel {
   String id;
@@ -11,36 +10,38 @@ class UserModel {
   String profession;
   String headLine;
   String avatarUrl;
-  UserFitProduct fitProduct;
+  List <UserFitProduct> fitProduct;
+  int brandFavouriteCount;
 
-  UserModel({
-    this.id,
-    this.firstName,
-    this.lastName,
-    this.dateOfBirth,
-    this.gender,
-    this.address,
-    this.profession,
-    this.headLine,
-    this.avatarUrl,
-    this.fitProduct
-  });
+  UserModel(
+      {this.id,
+      this.firstName,
+      this.lastName,
+      this.dateOfBirth,
+      this.gender,
+      this.address,
+      this.profession,
+      this.headLine,
+      this.avatarUrl,
+      this.fitProduct,
+      this.brandFavouriteCount});
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is UserModel &&
-              runtimeType == other.runtimeType &&
-              id == other.id &&
-              firstName == other.firstName &&
-              lastName == other.lastName &&
-              address == other.address &&
-              dateOfBirth == other.dateOfBirth &&
-              gender == other.gender &&
-              profession == other.profession &&
-              headLine == other.headLine &&
-              avatarUrl == other.avatarUrl &&
-              fitProduct == other.fitProduct;
+      other is UserModel &&
+          runtimeType == other.runtimeType &&
+          id == other.id &&
+          firstName == other.firstName &&
+          lastName == other.lastName &&
+          address == other.address &&
+          dateOfBirth == other.dateOfBirth &&
+          gender == other.gender &&
+          profession == other.profession &&
+          headLine == other.headLine &&
+          avatarUrl == other.avatarUrl &&
+          fitProduct == other.fitProduct &&
+          brandFavouriteCount == other.brandFavouriteCount;
 
   @override
   int get hashCode =>
@@ -53,7 +54,8 @@ class UserModel {
       profession.hashCode ^
       headLine.hashCode ^
       avatarUrl.hashCode ^
-      fitProduct.hashCode;
+      fitProduct.hashCode ^
+      brandFavouriteCount.hashCode;
 
   UserModel.initial()
       : id = '',
@@ -65,7 +67,8 @@ class UserModel {
         profession = '',
         headLine = '',
         avatarUrl = '',
-        fitProduct = null;
+        fitProduct = null,
+        brandFavouriteCount = 0;
 
   UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -78,6 +81,7 @@ class UserModel {
     headLine = json['headLine'];
     avatarUrl = json['avatarUrl'];
     fitProduct = json['fitProduct'];
+    brandFavouriteCount = json['brandFavouriteCount'];
   }
 
   Map<String, dynamic> toJson() {
@@ -92,6 +96,7 @@ class UserModel {
     data['headLine'] = this.headLine;
     data['avatarUrl'] = this.avatarUrl;
     data['fitProduct'] = this.fitProduct;
+    data['brandFavouriteCount'] = this.brandFavouriteCount;
     return data;
   }
 
@@ -117,40 +122,59 @@ class UserModel {
     return data;
   }
 
-  factory UserModel.fromJsonFitt(Map<String, dynamic> json) {
-    return UserModel(
-      id: json['id'] as String,
-      firstName: json['title'] as String,
-      lastName: json['thumbnailUrl'] as String,
-    );
+  UserModel.fromJsonDiscovery(Map<String, dynamic> json) {
+    id = json['id'];
+    firstName = json['name'];
+    lastName = json['lastName'];
+    avatarUrl = json['avatarUrl'];
+    fitProduct = json['fitProduct'];
   }
+
+  Map<String, dynamic> toJsonDiscovery() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['firstName'] = this.firstName;
+    data['lastName'] = this.lastName;
+    data['avatarUrl'] = this.avatarUrl;
+    data['fitProduct'] = this.fitProduct;
+    return data;
+  }
+
 }
 
+
+// Class for fit Product
 class UserFitProduct {
   String productId;
+  String brandId;
   String fitPercentage;
+  int userBrandProductFitCount;
 
-  UserFitProduct(this.productId, this.fitPercentage);
+  UserFitProduct(this.productId, this.brandId, this.fitPercentage,
+      this.userBrandProductFitCount);
 
   UserFitProduct.initial()
       : productId = '',
-        fitPercentage = '';
+        brandId = '',
+        fitPercentage = '',
+        userBrandProductFitCount = 0;
+
 
   UserFitProduct.fromJson(Map<String, dynamic> json)
       : productId = json['productId'],
-        fitPercentage = json['fitPercentage'];
+        brandId = json['brandId'],
+        fitPercentage = json['fitPercentage'],
+        userBrandProductFitCount = json['userBrandProductFitCount'];
 
   Map<String, dynamic> toJson() => {
-      'productId': productId,
-      'fitPercentage': fitPercentage,
-  };
+        'productId': productId,
+        'brandId': brandId,
+        'fitPercentage': fitPercentage,
+        'userBrandProductFitCount': userBrandProductFitCount
+      };
 }
 
-
-enum Gender {
-  female,
-  male
-}
+enum Gender { female, male }
 
 enum Profession {
   fashion_designer,

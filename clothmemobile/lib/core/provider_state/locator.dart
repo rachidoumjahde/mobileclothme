@@ -11,6 +11,7 @@ import 'package:clothme/core/provider_state/model/signin/signin_model.dart';
 import 'package:clothme/core/provider_state/model/signup/signup_model.dart';
 import 'package:clothme/core/service/api_service.dart';
 import 'package:clothme/core/service/auth/authentication_service.dart';
+import 'package:clothme/core/service/brand/brand_service.dart';
 import 'package:clothme/core/service/product/product_service.dart';
 import 'package:clothme/core/service/user/user_service.dart';
 import 'package:get_it/get_it.dart';
@@ -23,6 +24,7 @@ void setupLocator() {
   locator.registerLazySingleton(() => AuthenticationService());
   locator.registerLazySingleton(() => ProductService());
   locator.registerLazySingleton(() => UserService());
+  locator.registerLazySingleton(() => BrandService());
 
   // Register models
   locator.registerFactory(() => SignUpModel());

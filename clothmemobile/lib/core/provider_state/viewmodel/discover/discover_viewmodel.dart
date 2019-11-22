@@ -1,31 +1,43 @@
 import 'package:clothme/core/provider_state/locator.dart';
-import 'package:clothme/core/provider_state/model/fit/fit_model.dart';
-import 'package:clothme/core/service/product/product_service.dart';
+import 'package:clothme/core/provider_state/model/brand/brand_model.dart';
+import 'package:clothme/core/provider_state/model/user/user_model.dart';
+import 'package:clothme/core/service/brand/brand_service.dart';
 import 'package:clothme/core/service/user/user_service.dart';
 
 class DiscoverViewModel {
-  ProductService _productService = locator<ProductService>();
+  BrandService _brandService = locator<BrandService>();
   UserService _userService = locator<UserService>();
   String errorMessage;
-  List<FitModel> fitListProductData;
-  List<FitModel> fitListUserData;
+  List<BrandModel> brandData;
+  List<UserModel> userData;
+  List<Object> data;
 
-  // Get All Fit Data
-  Future getAllUserProductFit(String userId, String authHeader) async {
-    fitListProductData = (await _productService.getAllProduct(userId, authHeader)) as List<FitModel>;
-    return fitListProductData;
+  // Get Discovery List Data
+  Future getDiscoveryViewData(String userId, String authHeader) async {
+    userData = (await _userService.getUserDiscoveryData(userId, authHeader)) as List<UserModel>;
+    brandData = (await _brandService.getAllBrandDiscoveryViewModel(userId, authHeader)) as List<BrandModel>;
+    return userData;
+  }
+
+
+
+
+
+
+
+
+  // Get One Fit Data
+  Future getOneBrand(String userId, String brandId, String authHeader) async {
+    brandData = (await _brandService.getOneBrand(userId, brandId, authHeader)) as List<BrandModel>;
+    return brandData;
   }
 
   // Get One Fit Data
-  Future getOneUserProductFit(String userId, String productId, String authHeader) async {
-    fitListProductData = (await _productService.getOneProduct(userId, productId, authHeader)) as List<FitModel>;
-    return fitListProductData;
+  Future removeOneBrand(String userId, String brandId, String authHeader) async {
+    brandData = (await _brandService.removeOneBrand(userId, brandId, authHeader)) as List<BrandModel>;
+    return brandData;
   }
 
-  // Get User Data
-  Future getUser(String userId, String authHeader) async {
-    fitListUserData = (await _userService.getUser(userId, authHeader)) as List<FitModel>;
-    return fitListUserData;
-  }
+
 
 }

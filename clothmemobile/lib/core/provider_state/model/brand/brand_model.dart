@@ -58,14 +58,14 @@ class BrandModel {
     return data;
   }
 
-  BrandModel.fromJsonFit(Map<String, dynamic> json) {
+  BrandModel.fromJsonDiscovery(Map<String, dynamic> json) {
     brandId = json['brandId'];
     brandName = json['brandName'];
     location = json['location'];
     brandImage = json['brandImage'];
   }
 
-  Map<String, dynamic> toJsonFit() {
+  Map<String, dynamic> toJsonDiscovery() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['brandId'] = this.brandId;
     data['brandName'] = this.brandName;
@@ -74,12 +74,5 @@ class BrandModel {
     return data;
   }
 
-  factory BrandModel.fromJsonFitt(Map<String, dynamic> json) {
-    return BrandModel(
-      brandId: json['brandId'] as String,
-      brandName: json['brandName'] as String,
-      location: json['location'] as String,
-      brandImage: json['brandImage'] as Image
-    );
-  }
+
 }

@@ -13,20 +13,20 @@ class FitViewModel {
   List<UserModel> fitListUserData;
 
   // Get All Fit Data
-  Future getAllUserProductFit(String userId, String authHeader) async {
-    fitListProductData = (await _productService.getAllProduct(userId, authHeader)) as List<ProductModel>;
+  Future getProductFitList(String userId, String authHeader) async {
+    fitListProductData = (await _productService.getAllProductFitViewModel(userId, authHeader)) as List<ProductModel>;
     return fitListProductData;
   }
 
   // Get One Fit Data
-  Future getOneUserProductFit(String userId, String productId, String authHeader) async {
-    fitListProductData = (await _productService.getOneProduct(userId, productId, authHeader)) as List<ProductModel>;
+  Future getUserProductDetail(String userId, String productId, String authHeader) async {
+    fitListProductData = (await _productService.getOneProductDetail(userId, productId, authHeader)) as List<ProductModel>;
     return fitListProductData;
   }
 
   // Get User Data
-  Future getUser(String userId, String authHeader) async {
-    fitListUserData = (await _userService.getUser(userId, authHeader)) as List<UserModel>;
+  Future getUserFitList(String userId, String authHeader) async {
+    fitListUserData = (await _userService.getUserFitHomeData(userId, authHeader)) as List<UserModel>;
     return fitListUserData;
   }
 
