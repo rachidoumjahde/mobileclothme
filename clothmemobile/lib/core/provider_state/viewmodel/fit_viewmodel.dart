@@ -1,19 +1,31 @@
 import 'package:clothme/core/provider_state/locator.dart';
-import 'package:clothme/core/provider_state/model/base_model.dart';
 import 'package:clothme/core/provider_state/model/fit/fit_model.dart';
-import 'package:clothme/core/provider_state/view_state/view_state.dart';
-import 'package:clothme/core/service/fit/fit_service.dart';
+import 'package:clothme/core/service/product/product_service.dart';
+import 'package:clothme/core/service/user/user_service.dart';
 
-class FitViewModel extends BaseModel {
+class FitViewModel {
+  ProductService _productService = locator<ProductService>();
+  UserService _userService = locator<UserService>();
   String errorMessage;
-  List<FitModel> fitList;
+  List<FitModel> fitListProductData;
+  List<FitModel> fitListUserData;
 
-  Future<FitModel> getFitHomeData(String userId) async {
-    final FitService _fitService = locator<FitService>();
-    setState(ViewState.Busy);
-
-
-    setState(ViewState.Idle);
-//    return fitList;
+  // Get All Fit Data
+  Future getAllUserProductFit(String userId) async {
+    fitListProductData = (await _productService.getAllProduct(userId)) as List<FitModel>;
+    return fitListProductData;
   }
+
+  // Get One Fit Data
+  Future getOneUserProductFit(String userId, String productId, String authHeader) async {
+    fitListProductData = (await _productService.getOneProduct(userId, productId, authHeader)) as List<FitModel>;
+    return fitListProductData;
+  }
+
+  // Get User Data
+  Future getUser(String userId) async {
+    fitListUserData = (await _userService.getUser(userId)) as List<FitModel>;
+    return fitListUserData;
+  }
+
 }

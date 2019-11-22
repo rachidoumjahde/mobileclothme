@@ -7,6 +7,7 @@ import 'package:clothme/UI/cart/CartLayout.dart';
 
 class FitHome extends StatelessWidget {
   // Make this specific to ios or android
+  final int fitPercentage = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +21,7 @@ class FitHome extends StatelessWidget {
             onPressed: null,
           ),
           title: Text(
-            "My Sizes",
+            "Fit",
             style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 20.0,
@@ -66,7 +67,7 @@ class FitHome extends StatelessWidget {
                             Container(
                               height: 20.0,
                               child: Text(
-                                "99% Fit For Paul Ikhane, Get it Now for 30% OFF",
+                                "$fitPercentage" + "%" + " Fit For Paul Ikhane, Get it Now for 30% OFF",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16.0),

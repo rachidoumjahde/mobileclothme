@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:ffi';
 import 'package:clothme/core/provider_state/model/forgot_password/forgot_password_model.dart';
 import 'package:clothme/core/provider_state/model/reset_password/reset_password_model.dart';
 import 'package:clothme/core/provider_state/model/signin/signin_model.dart';
@@ -17,7 +16,8 @@ class AuthenticationService {
 
   // SIGN UP
   Future<SignUpModel> signUpWithEmail(SignUpModel signUpModel) async {
-    var response = await http.post('$endpoint/auth/signup', body: signUpModel);
+    var body = signUpModel.toJson();
+    var response = await http.post('$endpoint/auth/signup', body: body);
     // Convert and return
     return SignUpModel.fromJson(json.decode(response.body));
   }
@@ -42,7 +42,8 @@ class AuthenticationService {
 
   // SIGN IN
   Future<UserModel> signIn(SignInModel signInModel) async {
-    var response = await http.post('$endpoint/mobile-auth/signin', body: signInModel);
+    var body = signInModel.toJson();
+    var response = await http.post('$endpoint/mobile-auth/signin', body: body);
     var user = UserModel.fromJson(json.decode(response.body));
     // add user to stream
     userController.add(user);
@@ -57,14 +58,16 @@ class AuthenticationService {
   }
 
   Future<ResetPasswordModel> resetPassword(ResetPasswordModel resetPasswordModel) async {
-    var response = await http.post('$endpoint/mobile-auth/resetpassword', body: resetPasswordModel);
+    var body = resetPasswordModel.toJson();
+    var response = await http.post('$endpoint/mobile-auth/resetpassword', body: body);
     var user = ResetPasswordModel.fromJson(json.decode(response.body));
     // return user
     return user;
   }
 
   Future<ForgotPasswordModel> forgotPassword(ForgotPasswordModel forgotPasswordModel) async {
-    var response = await http.post('$endpoint/mobile-auth/forgotpassword', body: forgotPasswordModel);
+    var body = forgotPasswordModel.toJson();
+    var response = await http.post('$endpoint/mobile-auth/forgotpassword', body: body);
     var user = ForgotPasswordModel.fromJson(json.decode(response.body));
     // return user
     return user;

@@ -55,7 +55,7 @@ class _BottomNavigationBarState extends State<BottomNavigation> {
                     size: 23.0,
                   ),
                   title: Text(
-                    "Size",
+                    "Fit",
                     style: TextStyle(
                         fontFamily: "Roboto",
                         letterSpacing: 0.5,

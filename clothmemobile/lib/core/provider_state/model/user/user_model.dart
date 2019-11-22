@@ -87,6 +87,26 @@ class UserModel {
     data['avatarUrl'] = this.avatarUrl;
     return data;
   }
+
+  UserModel.fromJsonFit(Map<String, dynamic> json) {
+    id = json['id'];
+    firstName = json['name'];
+    lastName = json['lastName'];
+    profession = json['profession'];
+    headLine = json['headLine'];
+    avatarUrl = json['avatarUrl'];
+  }
+
+  Map<String, dynamic> toJsonFit() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['firstName'] = this.firstName;
+    data['lastName'] = this.lastName;
+    data['profession'] = this.profession;
+    data['headLine'] = this.headLine;
+    data['avatarUrl'] = this.avatarUrl;
+    return data;
+  }
 }
 
 
