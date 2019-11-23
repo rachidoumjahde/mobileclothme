@@ -1,3 +1,4 @@
+import 'package:clothme/core/provider_state/model/product/product_list_model.dart';
 import 'package:flutter/material.dart';
 
 class DiscoverModel {
@@ -7,6 +8,13 @@ class DiscoverModel {
   Image brandLogo;
   int userBrandProductFitCount;
   int brandFavouriteCount;
+  String brandDetails;
+  String brandAddress;
+  Image brandCoverImage;
+  int brandLocationsCount;
+  int totalProductCount;
+  int favouriteCount;
+  List<ProductListModel> topSelling;
 
   DiscoverModel({
     this.brandId,
@@ -14,6 +22,13 @@ class DiscoverModel {
     this.location,
     this.brandLogo,
     this.userBrandProductFitCount,
-    this.brandFavouriteCount
+    this.brandFavouriteCount,
+    this.brandDetails,
+    this.brandAddress,
+    this.brandCoverImage,
+    this.brandLocationsCount,
+    this.totalProductCount,
+    this.favouriteCount,
+    this.topSelling
   });
 }

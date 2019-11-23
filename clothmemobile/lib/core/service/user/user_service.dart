@@ -43,7 +43,7 @@ class UserService {
 
   Future<UserModel> updateUser(String userId, UserModel userData, String authHeader) async {
     var body = userData.toJson();
-    var response = await http.put('$endpoint/mobile-user/$userId', body: body,
+    var response = await http.put('$endpoint/mobile-user/user/$userId', body: body,
         // Send authorization headers to the backend.
         headers: {HttpHeaders.authorizationHeader: authHeader});
     // Convert
