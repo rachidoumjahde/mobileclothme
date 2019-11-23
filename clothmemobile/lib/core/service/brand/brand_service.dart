@@ -19,6 +19,17 @@ class BrandService {
     return brandData;
   }
 
+  // Get User Discovery Data
+  Future<BrandModel> getUserFavouriteListData(String userId, String authHeader) async {
+    var response = await http.get('$endpoint/mobile-brand/favourite-user-brand/$userId',
+        // Send authorization headers to the backend.
+        headers: {HttpHeaders.authorizationHeader: authHeader});
+    // Convert
+    var favouriteData = BrandModel.fromJsonFavouriteList(json.decode(response.body));
+    // return
+    return favouriteData;
+  }
+
   /// Get User Brands by UserId and BrandId
   Future<BrandModel> getOneBrand(String userId, String brandId, String authHeader) async {
     var response = await http.get('$endpoint/mobile-brand/$userId/brand/$brandId',

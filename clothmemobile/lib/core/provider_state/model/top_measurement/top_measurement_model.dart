@@ -1,30 +1,22 @@
 import 'package:clothme/core/provider_state/model/base_model.dart';
 
-class FrontModel extends BaseModel {
+class TopMeasurementModel extends BaseModel {
   //  variables = {'width': double, 'height': double}
-  final String id;
-  final Map head;
-  final Map neck;
-  final Map shoulder;
-  final Map bust;
-  final Map underBust;
-  final Map armHole;
-  final Map upperArm;
-  final Map lowerArm;
-  final Map shoulderToWrist;
-  final Map torso;
-  final Map shoulderToWaist;
-  final Map waist;
-  final Map hips;
-  final Map inseam;
-  final Map rise;
-  final Map thigh;
-  final Map waistToKnee;
-  final Map lowerLeg;
-  final Map ankleToUnderFeet;
-  final Map waistToAnkle;
+  String id;
+  Map head;
+  Map neck;
+  Map shoulder;
+  Map bust;
+  Map underBust;
+  Map armHole;
+  Map upperArm;
+  Map lowerArm;
+  Map shoulderToWrist;
+  Map torso;
+  Map shoulderToWaist;
+  Map waist;
 
-  FrontModel({
+  TopMeasurementModel({
     this.id,
     this.head,
     this.neck,
@@ -38,20 +30,12 @@ class FrontModel extends BaseModel {
     this.shoulderToWrist,
     this.torso,
     this.waist,
-    this.hips,
-    this.inseam,
-    this.rise,
-    this.thigh,
-    this.waistToKnee,
-    this.lowerLeg,
-    this.ankleToUnderFeet,
-    this.waistToAnkle,
   });
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-          other is FrontModel &&
+          other is TopMeasurementModel &&
               runtimeType == other.runtimeType &&
               id == other.id &&
               head == other.head &&
@@ -65,14 +49,7 @@ class FrontModel extends BaseModel {
               shoulderToWrist == other.shoulderToWrist &&
               shoulderToWaist == other.shoulderToWaist &&
               torso == other.torso &&
-              waist == other.waist &&
-              inseam == other.inseam &&
-              rise == other.rise &&
-              thigh == other.thigh &&
-              waistToKnee == other.waistToKnee &&
-              lowerLeg == other.lowerLeg &&
-              ankleToUnderFeet == other.ankleToUnderFeet &&
-              waistToAnkle == other.waistToAnkle;
+              waist == other.waist;
 
   @override
   int get hashCode =>
@@ -89,4 +66,53 @@ class FrontModel extends BaseModel {
       shoulderToWaist.hashCode ^
       torso.hashCode ^
       waist.hashCode;
+
+  TopMeasurementModel.initial()
+      : id = '',
+        head = null,
+        neck = null,
+        shoulder = null,
+        bust = null,
+        underBust = null,
+        armHole = null,
+        upperArm = null,
+        lowerArm = null,
+        shoulderToWrist = null,
+        shoulderToWaist = null,
+        torso = null,
+        waist = null;
+
+  TopMeasurementModel.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    head = json['head'];
+    neck = json['neck'];
+    shoulder = json['shoulder'];
+    bust = json['bust'];
+    underBust = json['underBust'];
+    armHole = json['armHole'];
+    upperArm = json['upperArm'];
+    lowerArm = json['lowerArm'];
+    shoulderToWrist = json['shoulderToWrist'];
+    shoulderToWaist = json['shoulderToWaist'];
+    torso = json['torso'];
+    waist = json['waist'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['head'] = this.head;
+    data['neck'] = this.neck;
+    data['shoulder'] = this.shoulder;
+    data['bust'] = this.bust;
+    data['underBust'] = this.underBust;
+    data['armHole'] = this.armHole;
+    data['upperArm'] = this.upperArm;
+    data['lowerArm'] = this.lowerArm;
+    data['shoulderToWrist'] = this.shoulderToWrist;
+    data['shoulderToWaist'] = this.shoulderToWaist;
+    data['torso'] = this.torso;
+    data['waist'] = this.waist;
+    return data;
+  }
 }
