@@ -10,35 +10,46 @@ class UserService {
 
   // Get User Home Fit Data
   Future<UserModel> getUserFitHomeData(String userId, String authHeader) async {
-    var response = await http.get('$endpoint/mobile-user/$userId',
+    var response = await http.get('$endpoint/mobile-user/user-home/$userId',
         // Send authorization headers to the backend.
         headers: {HttpHeaders.authorizationHeader: authHeader});
     // Convert
-    var fitData = UserModel.fromJsonFit(json.decode(response.body));
+    var fitHomeData = UserModel.fromJsonFit(json.decode(response.body));
     // return
-    return fitData;
+    return fitHomeData;
   }
 
   // Get User Discovery Data
   Future<UserModel> getUserDiscoveryData(String userId, String authHeader) async {
-    var response = await http.get('$endpoint/mobile-user/all-user-product/$userId',
+    var response = await http.get('$endpoint/mobile-user/all-brand-fit/$userId',
         // Send authorization headers to the backend.
         headers: {HttpHeaders.authorizationHeader: authHeader});
     // Convert
-    var fitData = UserModel.fromJsonDiscovery(json.decode(response.body));
+    var discoveryData = UserModel.fromJsonDiscovery(json.decode(response.body));
     // return
-    return fitData;
+    return discoveryData;
+  }
+
+  // Get User Discovery Data
+  Future<UserModel> getUserProfileData(String userId, String authHeader) async {
+    var response = await http.get('$endpoint/mobile-user/user-profile/$userId',
+        // Send authorization headers to the backend.
+        headers: {HttpHeaders.authorizationHeader: authHeader});
+    // Convert
+    var profileData = UserModel.fromJson(json.decode(response.body));
+    // return
+    return profileData;
   }
 
   Future<UserModel> updateUser(String userId, UserModel userData, String authHeader) async {
-    var body = userData.toJsonFit();
+    var body = userData.toJson();
     var response = await http.put('$endpoint/mobile-user/$userId', body: body,
         // Send authorization headers to the backend.
         headers: {HttpHeaders.authorizationHeader: authHeader});
     // Convert
-    var fitData = UserModel.fromJson(json.decode(response.body));
+    var data = UserModel.fromJson(json.decode(response.body));
     // return
-    return fitData;
+    return data;
   }
 
 }
