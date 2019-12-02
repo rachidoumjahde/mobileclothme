@@ -1,3 +1,5 @@
+import 'package:clothme/UI/market_place/MarketPlaceView.dart';
+import 'package:clothme/UI/searchd/Search.dart';
 import 'package:flutter/material.dart';
 import 'brand/BrandLayout.dart';
 import 'fit/FitHome.dart';
@@ -23,6 +25,8 @@ class _BottomNavigationBarState extends State<BottomNavigation> {
       case 2:
         return new brand();
       case 3:
+        return new SearchAppbar();//MarketPlaceView();
+      case 4:
         return new profile();
         break;
       default:
@@ -76,6 +80,16 @@ class _BottomNavigationBarState extends State<BottomNavigation> {
                   icon: Icon(Icons.shop),
                   title: Text(
                     "Brand",
+                    style: TextStyle(
+                        fontFamily: "Roboto",
+                        letterSpacing: 0.5,
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w600),
+                  )),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.local_mall),
+                  title: Text(
+                    "Market",
                     style: TextStyle(
                         fontFamily: "Roboto",
                         letterSpacing: 0.5,
