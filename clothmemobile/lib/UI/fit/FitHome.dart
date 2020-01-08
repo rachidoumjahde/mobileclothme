@@ -4,7 +4,6 @@ import 'package:clothme/UI/fit/widget/brandDetails.dart';
 import 'package:clothme/UI/notification/Notification.dart';
 import 'package:clothme/UI/cart/CartLayout.dart';
 
-
 class FitHome extends StatelessWidget {
   // Make this specific to ios or android
   final int fitPercentage = 0;
@@ -12,7 +11,7 @@ class FitHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: new Color(0xfff8faf8),
+//          backgroundColor: Theme.of(context).primaryColor,
           centerTitle: true,
           elevation: 2.0,
           leading: IconButton(
@@ -22,10 +21,11 @@ class FitHome extends StatelessWidget {
           ),
           title: Text(
             "Clothme",
+//            style: Theme.of(context).textTheme.title,
             style: TextStyle(
                 fontWeight: FontWeight.w700,
                 fontSize: 20.0,
-                color: Colors.black54,
+                color: Colors.black,
                 fontFamily: "Roboto"),
           ),
           actions: <Widget>[
@@ -67,7 +67,9 @@ class FitHome extends StatelessWidget {
                             Container(
                               height: 20.0,
                               child: Text(
-                                "$fitPercentage" + "%" + " Fit For Paul Ikhane, Get it Now for 30% OFF",
+                                "$fitPercentage" +
+                                    "%" +
+                                    " Fit For Paul Ikhane, Get it Now for 30% OFF",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16.0),
@@ -109,11 +111,11 @@ class FitHome extends StatelessWidget {
                               SizedBox(
                                 width: 180.0,
                               ),
-                              Container(
-                                  child: InkWell(
-                                    onTap: () {},
-                                    child: ButtonBuy(),
-                              ))
+//                              Container(
+//                                  child: InkWell(
+//                                onTap: () {},
+//                                child: ButtonBuy(),
+//                              ))
                             ],
                           ),
                         ],
@@ -128,12 +130,10 @@ class FitHome extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
-              ),
+              )),
             ),
           ],
-        )
-    );
+        ));
   }
 }
 

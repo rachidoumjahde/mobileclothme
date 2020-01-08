@@ -1,20 +1,15 @@
 import 'dart:async';
-
 import 'package:clothme/UI/signin/widget/signin_form.dart';
-import 'package:clothme/common/widget/text_form_field.dart';
 import 'package:flutter/material.dart';
-import 'package:clothme/UI/signup/Signup.dart';
-
 import 'LoginAnimation.dart';
-
 
 class SignInView extends StatefulWidget {
   @override
   _SignInViewState createState() => _SignInViewState();
 }
+
 /// Component Widget this layout UI
-class _SignInViewState extends State<SignInView>
-    with TickerProviderStateMixin {
+class _SignInViewState extends State<SignInView> with TickerProviderStateMixin {
   //Animation Declaration
   AnimationController sanimationController;
 
@@ -33,7 +28,6 @@ class _SignInViewState extends State<SignInView>
               });
             }
           });
-    // TODO: implement initState
     super.initState();
   }
 
@@ -80,6 +74,7 @@ class _SignInViewState extends State<SignInView>
               end: FractionalOffset.bottomCenter,
             ),
           ),
+
           /// Set component layout
           child: ListView(
             children: <Widget>[
@@ -87,6 +82,7 @@ class _SignInViewState extends State<SignInView>
                 alignment: AlignmentDirectional.bottomCenter,
                 children: <Widget>[
                   SignInForm(),
+
                   /// Set Animaion after user click buttonLogin
                   tap == 0
                       ? InkWell(
@@ -116,7 +112,6 @@ class _SignInViewState extends State<SignInView>
   }
 }
 
-
 ///buttonCustomFacebook class
 class ButtonCustomFacebook extends StatelessWidget {
   @override
@@ -125,27 +120,32 @@ class ButtonCustomFacebook extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Container(
         alignment: FractionalOffset.center,
-        height: 55.0,
-        width: 55.0,
+        height: 80.0,
+        width: 80.0,
         decoration: BoxDecoration(
           color: Color.fromRGBO(107, 112, 248, 1.0),
-          borderRadius: BorderRadius.circular(40.0),
+          borderRadius: BorderRadius.circular(50.0),
           boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 15.0)],
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-              "assets/img/icon_facebook.png",
-              height: 25.0,
-            ),
-          ],
+        child: InkWell(
+          onTap: () {_signInWithFacebook();},
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image.asset(
+                "assets/img/icon_facebook.png",
+                height: 30.0,
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+_signInWithFacebook() {
 
+}
 ///buttonCustomGoogle class
 class ButtonCustomGoogle extends StatelessWidget {
   @override
@@ -154,25 +154,31 @@ class ButtonCustomGoogle extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Container(
         alignment: FractionalOffset.center,
-        height: 55.0,
-        width: 55.0,
+        height: 80.0,
+        width: 80.0,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10.0)],
-          borderRadius: BorderRadius.circular(40.0),
+          borderRadius: BorderRadius.circular(50.0),
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-              "assets/img/google.png",
-              height: 25.0,
-            ),
-          ],
+        child: InkWell(
+          onTap: () {_signInWithGoogle();},
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image.asset(
+                "assets/img/google.png",
+                height: 30.0,
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+}
+_signInWithGoogle(){
+
 }
 
 ///ButtonBlack class
