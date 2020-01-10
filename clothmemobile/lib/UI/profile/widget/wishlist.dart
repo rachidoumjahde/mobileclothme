@@ -1,44 +1,130 @@
+import 'package:clothme/UI/circle/widget/circle_detail.dart';
+import 'package:clothme/common/widget/separator/separator.dart';
+import 'package:clothme/common/widget/text/text_style.dart';
+import 'package:clothme/core/provider_state/viewmodel/mock/brandMockData.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class WishListGrid extends StatefulWidget {
-  @override
-  _WishListGridState createState() => _WishListGridState();
-}
+class WishListCard extends StatelessWidget {
+  final Planet planet;
+  final bool horizontal;
 
-class _WishListGridState extends State<WishListGrid> {
-  final List<String> images = [
-    "https://uae.microless.com/cdn/no_image.jpg",
-    "https://images-na.ssl-images-amazon.com/images/I/81aF3Ob-2KL._UX679_.jpg",
-    "https://www.boostmobile.com/content/dam/boostmobile/en/products/phones/apple/iphone-7/silver/device-front.png.transform/pdpCarousel/image.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgUgs8_kmuhScsx-J01d8fA1mhlCR5-1jyvMYxqCB8h3LCqcgl9Q",
-    "https://ae01.alicdn.com/kf/HTB11tA5aiAKL1JjSZFoq6ygCFXaw/Unlocked-Samsung-GALAXY-S2-I9100-Mobile-Phone-Android-Wi-Fi-GPS-8-0MP-camera-Core-4.jpg_640x640.jpg",
-    "https://media.ed.edmunds-media.com/gmc/sierra-3500hd/2018/td/2018_gmc_sierra-3500hd_f34_td_411183_1600.jpg",
-    "https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/16q1/665019/2016-chevrolet-silverado-2500hd-high-country-diesel-test-review-car-and-driver-photo-665520-s-original.jpg",
-    "https://www.galeanasvandykedodge.net/assets/stock/ColorMatched_01/White/640/cc_2018DOV170002_01_640/cc_2018DOV170002_01_640_PSC.jpg",
-    "https://media.onthemarket.com/properties/6191869/797156548/composite.jpg",
-    "https://media.onthemarket.com/properties/6191840/797152761/composite.jpg",
-  ];
+  WishListCard(this.planet, {this.horizontal = true});
+
+  WishListCard.vertical(this.planet): horizontal = false;
+
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: StaggeredGridView.countBuilder(
-        crossAxisCount: 4,
-        itemCount: 10,
-        itemBuilder: (BuildContext context, int index) => Card(
-          child: Column(
+
+    final circleThumbnail = new Container(
+      margin: new EdgeInsets.symmetric(
+          vertical: 16.0
+      ),
+      alignment: horizontal ? FractionalOffset.centerLeft : FractionalOffset.center,
+      child: new Hero(
+        tag: "planet-hero-${planet.id}",
+        child: new Image(
+          image: new AssetImage(planet.image),
+          height: 92.0,
+          width: 92.0,
+        ),
+      ),
+    );
+
+    Widget _planetValue({String value, String image}) {
+      return new Container(
+        child: new Row(
+            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Image.network(images[index]),
-              Text("Some text"),
+              new Image.asset(image, height: 12.0),
+              new Container(width: 8.0),
+              new Text(planet.gravity, style: Style.smallTextStyle),
+            ]
+        ),
+      );
+    }
+
+
+    final circleCardContent = new Container(
+      margin: new EdgeInsets.fromLTRB(horizontal ? 76.0 : 16.0, horizontal ? 16.0 : 42.0, 16.0, 16.0),
+      constraints: new BoxConstraints.expand(),
+      child: new Column(
+        crossAxisAlignment: horizontal ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+        children: <Widget>[
+          new Container(height: 4.0),
+          new Text(planet.name, style: Style.titleTextStyle),
+          new Container(height: 10.0),
+          new Text(planet.location, style: Style.commonTextStyle),
+          new Separator(),
+          new Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new Expanded(
+                  flex: horizontal ? 1 : 0,
+                  child: _planetValue(
+                      value: planet.distance,
+                      image: 'assets/img/ic_distance.png')
+
+              ),
+              new Container(
+                width: horizontal ? 8.0 : 32.0,
+              ),
+              new Expanded(
+                  flex: horizontal ? 1 : 0,
+                  child: _planetValue(
+                      value: planet.gravity,
+                      image: 'assets/img/ic_gravity.png')
+              )
             ],
           ),
-        ),
-        staggeredTileBuilder: (int index) =>
-        new StaggeredTile.fit(2),
-        mainAxisSpacing: 4.0,
-        crossAxisSpacing: 4.0,
+        ],
       ),
+    );
+
+
+    final circleCard = new Container(
+      child: circleCardContent,
+      height: horizontal ? 200.0 : 154.0,
+      margin: horizontal
+          ? new EdgeInsets.only(left: 0.0)
+          : new EdgeInsets.only(top: 20.0),
+      decoration: new BoxDecoration(
+        color: new Color(0xFF333366),
+        shape: BoxShape.rectangle,
+        borderRadius: new BorderRadius.circular(12.0),
+        boxShadow: <BoxShadow>[
+          new BoxShadow(
+            color: Colors.black12,
+            blurRadius: 10.0,
+            offset: new Offset(0.0, 10.0),
+          ),
+        ],
+      ),
+    );
+
+
+    return new GestureDetector(
+        onTap: horizontal
+            ? () => Navigator.of(context).push(
+          new PageRouteBuilder(
+            pageBuilder: (_, __, ___) => new CircleDetailPage(planet),
+            transitionsBuilder: (context, animation, secondaryAnimation, child) =>
+            new FadeTransition(opacity: animation, child: child),
+          ) ,
+        )
+            : null,
+        child: new Container(
+          margin: const EdgeInsets.symmetric(
+            vertical: 10.0,
+            horizontal: 20.0,
+          ),
+          child: new Stack(
+            children: <Widget>[
+              circleCard,
+              circleThumbnail,
+            ],
+          ),
+        )
     );
   }
 }

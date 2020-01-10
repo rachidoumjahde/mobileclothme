@@ -34,8 +34,8 @@ class _SignInViewState extends State<SignInView> with TickerProviderStateMixin {
   /// Dispose animation controller
   @override
   void dispose() {
-    super.dispose();
     sanimationController.dispose();
+    super.dispose();
   }
 
   /// PlayAnimation set forward reverse

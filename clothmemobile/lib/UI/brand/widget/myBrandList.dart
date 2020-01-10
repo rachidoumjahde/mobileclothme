@@ -10,120 +10,177 @@ class BrandListCard extends StatelessWidget {
   final bool horizontal;
 
   BrandListCard(this.planet, {this.horizontal = true});
-
-  BrandListCard.vertical(this.planet): horizontal = false;
-
-
+  BrandListCard.vertical(this.planet) : horizontal = false;
   @override
   Widget build(BuildContext context) {
-    final brandLogoThumbnail = new Container(
-      margin: new EdgeInsets.symmetric(
-          vertical: 16.0
-      ),
-      alignment: horizontal ? FractionalOffset.centerLeft : FractionalOffset.center,
-      child: new Hero(
-        tag: "planet-hero-${planet.id}",
-        child: new Image(
-          image: new AssetImage(planet.image),
-          height: 92.0,
-          width: 92.0,
+    final logoThumbnail = Container(
+      height: 160,
+      width: MediaQuery.of(context).size.width,
+//      decoration: BoxDecoration(color: Colors.green),
+      child: Stack(children: <Widget>[
+        Padding(
+          padding: EdgeInsets.only(top: 50),
+          child: Container(
+            height: 110,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(color: Colors.orange),
+          ),
+        ),
+        Positioned(
+          top: 5,
+          child: Row(children: <Widget>[
+            Hero(
+              tag: "planet-hero-${planet.id}",
+              child: Padding(
+                padding: EdgeInsets.all(10.0),
+                child: CircleAvatar(
+                    radius: 60,
+                    backgroundImage:
+                        AssetImage("assets/imgBrand/nikeHeader.png")),
+              ),
+            ),
+            Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(top: 40, bottom: 2),
+                    child: Text(
+                      "Zara",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Text("Vancouver"),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(Icons.search),
+                        SizedBox(width: 15),
+                        Icon(Icons.search),
+                        SizedBox(width: 15),
+                        Icon(Icons.search),
+                        SizedBox(width: 15),
+                        Icon(Icons.search),
+                      ],
+                    ),
+                  ),
+                ]),
+          ]),
+        ),
+      ]),
+    );
+
+    final brandUserFitCount = Hero(
+      tag: "user-fit-count-${planet.id}",
+      child: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Text(
+          planet.fitCount.toString(),
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
         ),
       ),
     );
 
+    Widget _brandServices = Hero(
+      tag: "",
+      child: Row(),
+    );
+
     Widget _planetValue({String value, String image}) {
-      return new Container(
-        child: new Row(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              new Image.asset(image, height: 12.0),
-              new Container(width: 8.0),
-              new Text(planet.gravity, style: Style.smallTextStyle),
-            ]
-        ),
+      return Container(
+        child: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
+          Image.asset(image, height: 12.0),
+          Container(width: 8.0),
+          Text(planet.gravity, style: Style.smallTextStyle),
+        ]),
       );
     }
 
-    final brandCardContent = new Container(
-      margin: new EdgeInsets.fromLTRB(horizontal ? 76.0 : 16.0, horizontal ? 16.0 : 42.0, 16.0, 16.0),
-      constraints: new BoxConstraints.expand(),
-      child: new Column(
-        crossAxisAlignment: horizontal ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+    final brandCardContent = Container(
+      margin: EdgeInsets.fromLTRB(
+          horizontal ? 76.0 : 16.0, horizontal ? 16.0 : 42.0, 16.0, 16.0),
+      constraints: BoxConstraints.expand(),
+      child: Column(
+        crossAxisAlignment:
+            horizontal ? CrossAxisAlignment.start : CrossAxisAlignment.center,
         children: <Widget>[
-          new Container(height: 4.0),
-          new Text(planet.name, style: Style.titleTextStyle),
-          new Container(height: 10.0),
-          new Text(planet.location, style: Style.commonTextStyle),
-          new Separator(),
-          new Row(
+          Container(height: 4.0),
+          Text(planet.name, style: Style.titleTextStyle),
+          Container(height: 10.0),
+          Text(planet.location, style: Style.commonTextStyle),
+          Separator(),
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new Expanded(
-                  flex: horizontal ? 1 : 0,
-                  child: _planetValue(
-                      value: planet.distance,
-                      image: 'assets/img/ic_distance.png')
-
-              ),
-              new Container(
+//              new Expanded(
+//                  flex: horizontal ? 1 : 0,
+//                  child: _planetValue(
+//                      value: planet.distance,
+//                      image: 'assets/img/ic_distance.png')),
+              Container(
                 width: horizontal ? 8.0 : 32.0,
               ),
-              new Expanded(
-                  flex: horizontal ? 1 : 0,
-                  child: _planetValue(
-                      value: planet.gravity,
-                      image: 'assets/img/ic_gravity.png')
-              )
+//              new Expanded(
+//                  flex: horizontal ? 1 : 0,
+//                  child: _planetValue(
+//                      value: planet.gravity,
+//                      image: 'assets/img/ic_gravity.png'))
             ],
           ),
         ],
       ),
     );
 
-
-    final brandCard = new Container(
-      child: brandCardContent,
+    final brandCard = Container(
+//      child: FittedBox(
+//        child: Image.asset(
+//          "assets/imgCategoryMan/Man6.jpg",
+//          fit: BoxFit.fill,
+//        ),
+//      ),//brandCardContent,
       height: horizontal ? 500.0 : 154.0,
-      margin: horizontal
-          ? new EdgeInsets.only(left: 0.0)
-          : new EdgeInsets.only(top: 20.0),
-      decoration: new BoxDecoration(
-        color: new Color(0xFF333366),
+      margin:
+          horizontal ? EdgeInsets.only(left: 0.0) : EdgeInsets.only(top: 20.0),
+      decoration: BoxDecoration(
+        color: Color(0xFF333366),
         shape: BoxShape.rectangle,
-        borderRadius: new BorderRadius.circular(12.0),
+        borderRadius: BorderRadius.circular(12.0),
         boxShadow: <BoxShadow>[
-          new BoxShadow(
+          BoxShadow(
             color: Colors.black12,
             blurRadius: 10.0,
-            offset: new Offset(0.0, 10.0),
+            offset: Offset(0.0, 10.0),
           ),
         ],
       ),
     );
 
-
-    return new GestureDetector(
+    return GestureDetector(
         onTap: horizontal
             ? () => Navigator.of(context).push(
-          new PageRouteBuilder(
-            pageBuilder: (_, __, ___) => new DetailPage(planet),
-            transitionsBuilder: (context, animation, secondaryAnimation, child) =>
-            new FadeTransition(opacity: animation, child: child),
-          ) ,
-        )
+                  PageRouteBuilder(
+                    pageBuilder: (_, __, ___) => TwitterProfilePage(),//DetailPage(planet),
+                    transitionsBuilder:
+                        (context, animation, secondaryAnimation, child) =>
+                            FadeTransition(opacity: animation, child: child),
+                  ),
+                )
             : null,
-        child: new Container(
+        child: Container(
           margin: const EdgeInsets.symmetric(
             vertical: 12.0,
             horizontal: 20.0,
           ),
-          child: new Stack(
+          child: Stack(
             children: <Widget>[
               brandCard,
-              brandLogoThumbnail,
+              Positioned(right: 10.0, top: 20, child: brandUserFitCount),
+              Positioned(left: 0.0, bottom: 0.0, child: logoThumbnail),
             ],
           ),
-        )
-    );
+        ));
   }
 }

@@ -17,12 +17,18 @@ class _FavouriteBrandState extends State<FavouriteBrand> {
   Widget _appBarTitle = new Text('Favourite Brands');
 
   @override
+  void initState() {
+    planets = planets;
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(context),
       body: Row(children: <Widget>[
         new Expanded(
           child: new Container(
+            width: MediaQuery.of(context).size.width,
             color: new Color(0xFFffffff),
             child: new CustomScrollView(
               scrollDirection: Axis.vertical,
@@ -31,6 +37,7 @@ class _FavouriteBrandState extends State<FavouriteBrand> {
                 new SliverPadding(
                   padding: const EdgeInsets.symmetric(vertical: 10.0),
                   sliver: new SliverList(
+
                     delegate: new SliverChildBuilderDelegate(
                       (context, index) => new BrandListCard(planets[index]),
                       childCount: planets.length,

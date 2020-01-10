@@ -1,11 +1,8 @@
 import 'package:clothme/UI/brand/favouriteBrand.dart';
 import 'package:clothme/UI/market_place/MarketPlaceView.dart';
 import 'package:clothme/UI/profile/Profiled.dart';
-import 'package:clothme/UI/searchd/Search.dart';
 import 'package:flutter/material.dart';
-import 'brand/BrandLayout.dart';
 import 'fit/FitHome.dart';
-import 'profile/Profile.dart';
 import 'search/Search.dart';
 
 

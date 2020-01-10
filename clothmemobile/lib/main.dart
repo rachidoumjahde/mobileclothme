@@ -27,9 +27,9 @@ class MyApp extends StatelessWidget {
     ]);
 
     /// Set color status bar
-//    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
-//      statusBarColor: Colors.transparent, //or set color with: Color(0xFF0000FF)
-//    ));
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+      statusBarColor: Colors.transparent, //or set color with: Color(0xFF0000FF)
+    ));
     return MaterialApp(
       title: "ClothME",
 //      theme: CustomTheme.of(context),
