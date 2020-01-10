@@ -13,7 +13,6 @@ void main() {
   runApp(CustomTheme(
     initialThemeKey: MyThemeKeys.LIGHT,
     child: MyApp(),
-
   ));
 }
 
@@ -32,23 +31,23 @@ class MyApp extends StatelessWidget {
       statusBarColor: Colors.transparent, //or set color with: Color(0xFF0000FF)
     ));
     return MaterialApp(
-          title: "ClothME",
-          //theme: CustomTheme.of(context),
+      title: "ClothME",
+//      theme: CustomTheme.of(context),
           theme: ThemeData(
               brightness: Brightness.light,
               backgroundColor: Colors.white,
               primaryColorLight: Colors.white,
               primaryColorBrightness: Brightness.light,
               primaryColor: Colors.white),
-          debugShowCheckedModeBanner: false,
-          initialRoute: 'splashScreen',
-          onGenerateRoute: Router.generateRoute,
+      debugShowCheckedModeBanner: false,
+      initialRoute: 'splashScreen',
+      onGenerateRoute: Router.generateRoute,
 
-          /// Move splash screen to ChoseLogin Layout
-          /// Routes
-          routes: <String, WidgetBuilder>{
-            "login": (BuildContext context) => OnBoarding(),
-          },
-        );
+      /// Move splash screen to ChoseLogin Layout
+      /// Routes
+      routes: <String, WidgetBuilder>{
+        "login": (BuildContext context) => OnBoarding(),
+      },
+    );
   }
 }

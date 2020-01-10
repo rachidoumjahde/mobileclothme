@@ -37,7 +37,6 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
               });
             }
           });
-    // TODO: implement initState
     super.initState();
   }
 
@@ -117,16 +116,16 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
                     ),
 
                     /// Set Text
-                    Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
-                    Text(
-                      "OR",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white,
-                          letterSpacing: 0.2,
-                          fontFamily: 'Sans',
-                          fontSize: 17.0),
-                    ),
+                    Padding(padding: EdgeInsets.symmetric(vertical: 20.0)),
+//                    Text(
+//                      "OR",
+//                      style: TextStyle(
+//                          fontWeight: FontWeight.w900,
+//                          color: Colors.white,
+//                          letterSpacing: 0.2,
+//                          fontFamily: 'Sans',
+//                          fontSize: 17.0),
+//                    ),
 
                     /// TextFromField Email
                     Padding(padding: EdgeInsets.symmetric(vertical: 10.0)),
